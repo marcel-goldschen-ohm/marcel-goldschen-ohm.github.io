@@ -1,136 +1,137 @@
 <html>
-  <head>
-    <style>
-      body {
-        display: grid;
-        grid-template-rows: 90px 30px 1fr 50px; // header, nav, main, footer
-        width: 100vw;
-        height: 100vh;
-        margin: 0px;
-        padding: 0px;
-        background-color: lightgray;
-        font-family: Arial;
-      }
-      .centerColumnLayout {
-        display: grid;
-        grid-template-columns: 1fr 800px 1fr; // gutter column gutter
-        width: 100vw;
-      }
-      #header {
-      	background-color: black;
-      	color: white;
-      	padding: 10px;
-      }
-      #navbar {
-      	background-color: #cc5500;
-      	color: white;
-      	padding: 5px;
-      }
-      #main {
-      	background-color: gray;
-      }
-      #footer {
-      	background-color: black;
-      	color: white;
-      	padding: 10px;
-      }
-      #navbar div {
-        display: flex;
-        align-items: center;
-      }
-      #navbar a {
-        text-decoration: none;
-        color: white;
-      }
-      .section {
-        background-color: lightgray;
-        border: 2px solid black;
-        border-radius: 10px;
-        margin: 10px;
-        padding: 10px;
-      }
-      .sectiontitle {
-      	font-size: 16pt;
-      	margin-bottom: 10px;
-      }
-      .gototop { float: right; }
-      #people div {
-      	height: 110px;
-      	padding-top: 10px;
-      }
-      #people div img {
-      	float: left;
-      	width: 70px;
-      	height: 100px;
-      	margin-right: 10px;
-      }
-      #people ul li a {
-      	text-decoration: none;
-      	color: blue;
-      }
-      .pubjournal {
-      	font-style: italic;
-      	font-weight: bold;
-      }
-      a {
-      	text-decoration: none;
-      	color: #cc5500;
-      }
-      ul li { margin-bottom: 10px; }
-    </style>
-  </head>
-  <body>
+	<head>
+		<style>
+			body {
+				display: grid;
+				grid-template-rows: 90px 30px 1fr 50px; // header, nav, main, footer
+				width: 100vw;
+				height: 100vh;
+				margin: 0px;
+				padding: 0px;
+				background-color: lightgray;
+				font-family: Arial;
+			}
+			.centerColumnLayout {
+				display: grid;
+				grid-template-columns: 1fr 800px 1fr; // gutter column gutter
+				width: 100vw;
+			}
+			#header {
+				background-color: black;
+				color: white;
+				padding: 10px;
+			}
+			#navbar {
+				background-color: #cc5500;
+				color: white;
+				padding: 5px;
+			}
+			#main {
+				background-color: gray;
+			}
+			#footer {
+				background-color: black;
+				color: white;
+				padding: 10px;
+			}
+			#navbar div {
+				display: flex;
+				align-items: center;
+			}
+			#navbar a {
+				text-decoration: none;
+				color: white;
+			}
+			.section {
+				background-color: lightgray;
+				border: 2px solid black;
+				border-radius: 10px;
+				margin: 10px;
+				padding: 10px;
+			}
+			.sectiontitle {
+				font-size: 16pt;
+				display: block;
+				margin-bottom: 10px;
+			}
+			.gototop { float: right; }
+			#people div {
+				height: 110px;
+				padding-top: 10px;
+			}
+			#people div img {
+				float: left;
+				width: 70px;
+				height: 100px;
+				margin-right: 10px;
+			}
+			#people ul li a {
+				text-decoration: none;
+				color: blue;
+			}
+			.pubjournal {
+				font-style: italic;
+				font-weight: bold;
+			}
+			a {
+				text-decoration: none;
+				color: #cc5500;
+			}
+			ul li { margin-bottom: 10px; }
+		</style>
+	</head>
+	<body>
 		
-    <!-- //////////////////// HEADER //////////////////// -->
-    <div id="header" class="centerColumnLayout">
-      <div></div>
-      <div>
-        <div style="float:right">
-          <a href="https://neuroscience.utexas.edu">
-            <img src="images/University_of_Texas_at_Austin_logo.png" height="50px">
-          </a>
-          <br/>
-          <a href="https://neuroscience.utexas.edu" style="float: right; color: white; font-family: Times;">
-            Department of Neuroscience
-          </a>
-        </div>
-        <span style="font-size: 32pt;">Goldschen-Ohm Lab</span>
-        <br/>
-        <span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
-      </div>
-      <div></div>
-    </div>
-    
-    <!-- //////////////////// NAVBAR //////////////////// -->
-    <div id="navbar" class="centerColumnLayout">
-      <div></div>
-      <div>
-        <a href="#about">About</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#people">People</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#publications">Publications</a>
-      </div>
-      <div></div>
-    </div>
-    
-    <!-- //////////////////// MAIN //////////////////// -->
-    <div id="main" class="centerColumnLayout">
-      <div></div>
-      <div>
-      	
-      	<!-- //////////////////// ABOUT //////////////////// -->
-        <div id="about" class="section">
+		<!-- //////////////////// HEADER //////////////////// -->
+		<div id="header" class="centerColumnLayout">
+			<div></div>
+			<div>
+				<div style="float:right">
+					<a href="https://neuroscience.utexas.edu">
+						<img src="images/University_of_Texas_at_Austin_logo.png" height="50px">
+					</a>
+					<br/>
+					<a href="https://neuroscience.utexas.edu" style="float: right; color: white; font-family: Times;">
+						Department of Neuroscience
+					</a>
+				</div>
+				<span style="font-size: 32pt;">Goldschen-Ohm Lab</span>
+				<br/>
+				<span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
+			</div>
+			<div></div>
+		</div>
+		
+		<!-- //////////////////// NAVBAR //////////////////// -->
+		<div id="navbar" class="centerColumnLayout">
+			<div></div>
+			<div>
+				<a href="#about">About</a>
+				&nbsp;&bull;&nbsp;
+				<a href="#people">People</a>
+				&nbsp;&bull;&nbsp;
+				<a href="#publications">Publications</a>
+			</div>
+			<div></div>
+		</div>
+		
+		<!-- //////////////////// MAIN //////////////////// -->
+		<div id="main" class="centerColumnLayout">
+			<div></div>
+			<div>
+				
+				<!-- //////////////////// ABOUT //////////////////// -->
+				<div id="about" class="section">
 					<a class="gototop" href="#header">go to top</a>
-					<span class="sectiontitle">About</span><br/>
+					<span class="sectiontitle">About</span>
 					<p>A primary goal in the lab is to uncover mechanisms of ion channel behavior and drug-modulation. Ion channels are critical for rapid signaling between neurons and other excitable cells necessary for both normal cognition and physiological function. They bind a variety of small molecules that modulate their activity in ways that can be used for therapies to counteract disorders of the nervous system such as epilepsy, or other cellular signaling abnormalities such as cardiac arrhythmias. By uncovering the physical mechanisms by which these molecules drive channel behavior, we will open up new avenues for developing novel therapeutic strategies that impact human health.</p>
 					<p>The lab utilizes a variety of approaches such as fluorescence spectroscopy, electrophysiology and biochemistry at both single-molecule and ensemble levels to probe the dynamic motions of proteins that underlie their biological function. Dr. Goldschen-Ohm has recently developed a new high-throughput approach that can resolve binding of a single fluorescently-tagged ligand or drug molecule to its target protein at physiologically relevant concentrations previously inaccessible to single-molecule fluorescence techniques. This advance provides a novel window through which to examine how ligand/drug binding drives molecular function at a single-molecule level. The lab is particularly interested in developing new approaches to resolve the interplay between distinct domains within individual proteins, and uncover the role of these interactions in drug binding and modulation.</p>
 				</div>
-      	
-      	<!-- //////////////////// PEOPLE //////////////////// -->
+				
+				<!-- //////////////////// PEOPLE //////////////////// -->
 				<div id="people" class="section">
 					<a class="gototop" href="#header">go to top</a>
-					<span class="sectiontitle">People</span><br/>
+					<span class="sectiontitle">People</span>
 					<div>
 						<img src="">
 						Marcel Goldschen-Ohm, PhD<br/>
@@ -157,11 +158,11 @@
 						Argha Bandyopadhyay
 					</div>
 				</div>
-      	
-      	<!-- //////////////////// PUBLICATIONS //////////////////// -->
+				
+				<!-- //////////////////// PUBLICATIONS //////////////////// -->
 				<div id="publications" class="section">
 					<a class="gototop" href="#header">go to top</a>
-					<span class="sectiontitle">Publications</span><br/>
+					<span class="sectiontitle">Publications</span>
 					2019
 					<ul>
 						<li>
@@ -303,7 +304,7 @@
 			<div></div>
 		</div>
 		
-    <!-- //////////////////// FOOTER //////////////////// -->
+		<!-- //////////////////// FOOTER //////////////////// -->
 		<div id="footer" class="centerColumnLayout">
 			<div></div>
 			<div>
@@ -311,5 +312,5 @@
 			</div>
 			<div></div>
 		</div>
-  </body>
+	</body>
 </html>
