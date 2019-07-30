@@ -1,29 +1,310 @@
 <html>
-  <body style="background-color: lightgray; margin: 0px; padding: 0px;">
-    <div style="display: grid; grid-template-rows: 100px 1fr 50px; width: 100vw; height: 100vh;">
-      <div id="header" style="display: grid; grid-template-columns: 1fr 800px 1fr; width: 100vw; background-color: black; color: white; padding: 5px;">
-        <div></div>
-        <div>
-          <img src="images/University_of_Texas_at_Austin_logo.png" height="50px">
-          Goldschen-Ohm Lab<br/>
-          Ion Channels, Single-Molecule Spectroscopy, Dynamics
-        </div>
-        <div></div>
+  <head>
+    <style>
+      body {
+        display: grid;
+        grid-template-rows: 90px 30px 1fr 50px; // header, nav, main, footer
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        padding: 0px;
+        background-color: lightgray;
+        font-family: Arial;
+      }
+      .centerColumnLayout {
+        display: grid;
+        grid-template-columns: 1fr 800px 1fr; // gutter column gutter
+        width: 100vw;
+      }
+      #header {
+      	background-color: black;
+      	color: white;
+      	padding: 10px;
+      }
+      #navbar {
+      	background-color: #cc5500;
+      	color: white;
+      	padding: 5px;
+      }
+      #main {
+      	background-color: gray;
+      }
+      #footer {
+      	background-color: black;
+      	color: white;
+      	padding: 10px;
+      }
+      #navbar div {
+        display: flex;
+        align-items: center;
+      }
+      #navbar a {
+        text-decoration: none;
+        color: white;
+      }
+      .section {
+        background-color: lightgray;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+      }
+      .sectiontitle {
+      	font-size: 16pt;
+      	margin-bottom: 10px;
+      }
+      .gototop { float: right; }
+      #people div {
+      	height: 110px;
+      	padding-top: 10px;
+      }
+      #people div img {
+      	float: left;
+      	width: 70px;
+      	height: 100px;
+      	margin-right: 10px;
+      }
+      #people ul li a {
+      	text-decoration: none;
+      	color: blue;
+      }
+      .pubjournal {
+      	font-style: italic;
+      	font-weight: bold;
+      }
+      a {
+      	text-decoration: none;
+      	color: #cc5500;
+      }
+      ul li { margin-bottom: 10px; }
+    </style>
+  </head>
+  <body>
+    <!-- //////////////////// HEADER //////////////////// -->
+    <div id="header" class="centerColumnLayout">
+      <div></div>
+      <div>
+				<div style="float:right">
+					<a href="https://neuroscience.utexas.edu">
+							<img src="images/University_of_Texas_at_Austin_logo.png" height="50px"><br/>
+						</a>
+						<a href="https://neuroscience.utexas.edu" style="float: right; color: white; font-family: Times;">Department of Neuroscience</a>
+				</div>
+        <span style="font-size: 32pt;">Goldschen-Ohm Lab</span><br/>
+        <span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
       </div>
-      <div id="main" style="display: grid; grid-template-columns: 1fr 800px 1fr; width: 100vw; background-color: lightgray; padding: 5px;">
-        <div></div>
-        <div>
-          main
-        </div>
-        <div></div>
-      </div>
-      <div id="footer" style="display: grid; grid-template-columns: 1fr 800px 1fr; width: 100vw; background-color: black; color: white; padding: 5px;">
-        <div></div>
-        <div>
-          footer
-        </div>
-        <div></div>
-      </div>
+      <div></div>
     </div>
+    
+    <!-- //////////////////// NAVBAR //////////////////// -->
+    <div id="navbar" class="centerColumnLayout">
+      <div></div>
+      <div>
+        <a href="#about">About</a>
+        &nbsp;&bull;&nbsp;
+        <a href="#people">People</a>
+        &nbsp;&bull;&nbsp;
+        <a href="#publications">Publications</a>
+      </div>
+      <div></div>
+    </div>
+    
+    <!-- //////////////////// MAIN //////////////////// -->
+    <div id="main" class="centerColumnLayout">
+      <div></div>
+      <div>
+      	
+      	<!-- //////////////////// ABOUT //////////////////// -->
+        <div id="about" class="section">
+					<a class="gototop" href="#header">go to top</a>
+					<span class="sectiontitle">About</span><br/>
+					<p>A primary goal in the lab is to uncover mechanisms of ion channel behavior and drug-modulation. Ion channels are critical for rapid signaling between neurons and other excitable cells necessary for both normal cognition and physiological function. They bind a variety of small molecules that modulate their activity in ways that can be used for therapies to counteract disorders of the nervous system such as epilepsy, or other cellular signaling abnormalities such as cardiac arrhythmias. By uncovering the physical mechanisms by which these molecules drive channel behavior, we will open up new avenues for developing novel therapeutic strategies that impact human health.</p>
+					<p>The lab utilizes a variety of approaches such as fluorescence spectroscopy, electrophysiology and biochemistry at both single-molecule and ensemble levels to probe the dynamic motions of proteins that underlie their biological function. Dr. Goldschen-Ohm has recently developed a new high-throughput approach that can resolve binding of a single fluorescently-tagged ligand or drug molecule to its target protein at physiologically relevant concentrations previously inaccessible to single-molecule fluorescence techniques. This advance provides a novel window through which to examine how ligand/drug binding drives molecular function at a single-molecule level. The lab is particularly interested in developing new approaches to resolve the interplay between distinct domains within individual proteins, and uncover the role of these interactions in drug binding and modulation.</p>
+				</div>
+      	
+      	<!-- //////////////////// PEOPLE //////////////////// -->
+				<div id="people" class="section">
+					<a class="gototop" href="#header">go to top</a>
+					<span class="sectiontitle">People</span><br/>
+					<div>
+						<img src="">
+						Marcel Goldschen-Ohm, PhD<br/>
+						<a href="mailto:goldschen-ohm@utexas.edu">goldschen-ohm@utexas.edu</a>
+						&nbsp;&bull;&nbsp;
+						<a href="https://github.com/marcel-goldschen-ohm">GitHub</a>
+						&nbsp;&bull;&nbsp;
+						<a href="www.linkedin.com/in/marcel-goldschen-ohm">LinkedIn</a>
+					</div>
+					<div>
+						<img src="">
+						Shipra Gupta, PhD
+					</div>
+					<div>
+						<img src="">
+						Joseph (Wagner) Nors
+					</div>
+					<div>
+						<img src="">
+						Vishal Patel
+					</div>
+					<div>
+						<img src="">
+						Argha Bandyopadhyay
+					</div>
+				</div>
+      	
+      	<!-- //////////////////// PUBLICATIONS //////////////////// -->
+				<div id="publications" class="section">
+					<a class="gototop" href="#header">go to top</a>
+					<span class="sectiontitle">Publications</span><br/>
+					2019
+					<ul>
+						<li>
+							<span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
+							<a class="pubtitle" href="https://doi.org/10.1101/603761">"High-Throughput Single-Molecule Analysis via Divisive Segmentation and Clustering"</a>
+							<span class="pubjournal">bioRxiv preprint</span>
+						</li>
+						<li>
+							<span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
+							<a class="pubtitle" href="http://dx.doi.org/10.1085/jgp.201812278">"Batrachotoxin acts as a stent to hold open homotetrameric prokaryotic voltage-gated sodium channels"</a>
+							<span class="pubjournal">Journal of General Physiology</span>
+						</li>
+					</ul>
+					
+					<hr/>
+					Prior Publications<br/><br/>
+					2017
+					<ul>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+							<a class="pubtitle" href="http://dx.doi.org/10.1016/j.cell.2017.07.019">"SnapShot: Channel Gating Mechanisms"</a>
+							<span class="pubjournal">Cell</span>
+						</li>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, David S. White, Vadim A. Klenchin, Baron Chanda, and Randall H. Goldsmith.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1002/anie.201612050">"Observing Single-Molecule Dynamics at Millimolar Concentrations"</a>
+							<span class="pubjournal">Angewandte Chemie (International Edition)</span>
+						</li>
+						<li>
+							<span class="pubauthors">Yaxian Zhao, Marcel P. Goldschen-Ohm, Jo&atilde;o H. Morais-Cabral, Baron Chanda, and Gail A. Robertson.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201611701">"The Intrinsically-liganded cyclic nucleotide-binding homology domain promotes KCNH channel activation"</a>
+							<span class="pubjournal">Journal of General Physiology</span>
+						</li>
+					</ul>
+					
+					2016
+					<ul>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, Vadim A. Klenchin, David S. White, John B. Cowgill, Qiang Cui, Randall H. Goldsmith, and Baron Chanda.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.7554/eLife.20797">"Structure and dynamics underlying elementary ligand binding events in human pacemaking channels"</a>
+							<span class="pubjournal">eLife</span>
+						</li>
+					</ul>
+					
+					2015
+					<ul>
+						<li>
+							<span class="pubauthors">Huan Bao, Marcel Goldschen-Ohm, Pia Jeggle, Baron Chanda, J. Michael Edwardson, and Edwin R. Chapman.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.3141">"Exocytotic fusion pores are composed of both lipids and proteins"</a>
+							<span class="pubjournal">Nature Structural & Molecular Biology</span>
+						</li>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.2997">"How to open a proton pore-more than S4?"</a>
+							<span class="pubjournal">Nature Structural & Molecular Biology</span>
+						</li>
+					</ul>
+					
+					2014
+					<ul>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, Alexander Haroldson, Mathew V. Jones, and Robert A. Pearce.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201411183">"A nonequilibrium binary elements-based kinetic model for benzodiazepine regulation of GABAA receptors"</a>
+							<span class="pubjournal">Journal of General Physiology</span>
+						</li>
+						<li>
+							<span class="pubauthors">Kevin Oelstrom, Marcel P. Goldschen-Ohm, Miguel Holmgren, and Baron Chanda.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms4420">"Evolutionarily conserved intracellular gate of voltage-dependent sodium channels"</a>
+							<span class="pubjournal">Nature Communications</span>
+						</li>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+							<a class="pubtitle" href="http://dx.doi.org/10.1007/978-3-642-41588-3_9">"Probing Gating Mechanisms of Sodium Channels Using Pore Blockers"</a>
+							<span class="pubjournal">Handbook of Experimental Pharmacology</span>
+						</li>
+					</ul>
+					
+					2013
+					<ul>
+						<li>
+							<span class="pubauthors">Deborah L. Capes, Marcel P. Goldschen-Ohm, Manoel Arcisio-Miranda, Francisco Bezanilla, and Baron Chanda.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201310998">"Domain IV voltage-sensor movement is both sufficient and rate limiting for fast inactivation in sodium channels"</a>
+							<span class="pubjournal">Journal of General Physiology</span>
+						</li>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, Deborah L. Capes, Kevin M. Oelstrom, and Baron Chanda.</span>
+							<a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms2356">"Multiple pore conformations driven by asynchronous movements of voltage sensors in a eukaryotic sodium channel"</a>
+							<span class="pubjournal">Nature Communications</span>
+						</li>
+					</ul>
+					
+					2011
+					<ul>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner and Mathew V. Jones</span>
+							<a class="pubtitle" href="http://dx.doi.org/10.1124/mol.111.072033">"Three Arginines in the GABAA Receptor Binding Pocket Have Distinct Roles in the Formation and Stability of Agonist- versus Antagonist-Bound Complexes"</a>
+							<span class="pubjournal">Molecular Pharmacology</span>
+						</li>
+					</ul>
+					
+					2010
+					<ul>
+						<li>
+							<span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner, Steven Petrou and Mathew V. Jones</span>
+							<a class="pubtitle" href="http://dx.doi.org/10.1124/mol.109.058289">"An Epilepsy-Related Region in the GABAA Receptor Mediates Long-Distance Effects on GABA and Benzodiazepine Binding Sites"</a>
+							<span class="pubjournal">Molecular Pharmacology</span>
+						</li>
+					</ul>
+					<!--
+					2005
+					<ul>
+						<li>
+							<span class="pubauthors">David A. Wagner, Marcel P. Goldschen-Ohm, Tim G. Hales and Mathew V. Jones</span>
+							<a class="pubtitle" href="https://doi.org/10.1523/JNEUROSCI.1658-05.2005">"Kinetics and spontaneous open probability conferred by the epsilon subunit of the GABAA receptor"</a>
+							<span class="pubjournal">Journal of Neuroscience</span>
+						</li>
+					</ul>
+					
+					2004
+					<ul>
+						<li>
+							<span class="pubauthors">Eric Bach, Susan Coppersmith, Marcel Paz Goldschen, Robert Joynt and John Watrous</span>
+							<a class="pubtitle" href="https://doi.org/10.1016/j.jcss.2004.03.005">"One-dimensional quantum walks with absorbing boundaries"</a>
+							<span class="pubjournal">Journal of Computer and System Sciences</span>
+						</li>
+					</ul>
+					
+					1997
+					<ul>
+						<li>
+							<span class="pubauthors">M. Braunstein, R. Comstock, P. Hoffman, M. Womack, F. Deglman, D. Pinnick, G. Aaker, M. Goldschen, A. Jacobson, J. Zilka, D. Faith, S. Moore, J. Ricotta, A Weist and C. Modi</span>
+							<a class="pubtitle" href="http://link.springer.com/article/10.1023%2FA%3A1006201100330">"A CCD Image Archive Of Comet C/1995 O1 (Hale-Bopp): Dust Expansion Velocities"</a>
+							<span class="pubjournal">Earth, Moon, and Planets</span>
+						</li>
+					</ul>
+					-->
+				</div>
+			</div>
+			<div></div>
+		</div>
+		
+    <!-- //////////////////// FOOTER //////////////////// -->
+		<div id="footer" class="centerColumnLayout">
+			<div></div>
+			<div>
+				<a class="gototop" href="#header">go to top</a>
+			</div>
+			<div></div>
+		</div>
   </body>
 </html>
