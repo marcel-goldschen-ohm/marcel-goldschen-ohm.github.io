@@ -54,7 +54,9 @@
 				display: block;
 				margin-bottom: 10px;
 			}
-			.gototop { float: right; }
+			.gototop {
+				float: right;
+			}
 			#people div {
 				height: 110px;
 				padding-top: 10px;
@@ -76,7 +78,9 @@
 				text-decoration: none;
 				color: #cc5500;
 			}
-			ul li { margin-bottom: 10px; }
+			ul li {
+				margin-bottom: 10px;
+			}
 		</style>
 	</head>
 	<body>
@@ -87,7 +91,7 @@
 			<div>
 				<div style="float:right">
 					<a href="https://neuroscience.utexas.edu">
-						<img src="images/University_of_Texas_at_Austin_logo.png" height="50px">
+						<img src="images/UT_logo.png" height="50px">
 					</a>
 					<br/>
 					<a href="https://neuroscience.utexas.edu" style="float: right; color: white; font-family: Times;">
@@ -108,10 +112,10 @@
 				<a href="#about">About</a>
 				&nbsp;&bull;&nbsp;
 				<a href="#people">People</a>
-                &nbsp;&bull;&nbsp;
-                <a href="#software">Software</a>
-                &nbsp;&bull;&nbsp;
-                <a href="#resources">Resources</a>
+        &nbsp;&bull;&nbsp;
+        <a href="#software">Software</a>
+        &nbsp;&bull;&nbsp;
+        <a href="#resources">Resources</a>
 				&nbsp;&bull;&nbsp;
 				<a href="#publications">Publications</a>
 			</div>
@@ -128,14 +132,36 @@
 					<a class="gototop" href="#header">go to top</a>
 					<span class="sectiontitle">About</span>
 					<!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
-					<p>A primary goal in the lab is to uncover mechanisms of ion channel behavior and drug-modulation. Ion channels are critical for rapid signaling between neurons and other excitable cells necessary for both normal cognition and physiological function. They bind a variety of small molecules that modulate their activity in ways that can be used for therapies to counteract disorders of the nervous system such as epilepsy, or other cellular signaling abnormalities such as cardiac arrhythmias. By uncovering the physical mechanisms by which these molecules drive channel behavior, we will open up new avenues for developing novel therapeutic strategies that impact human health.
+					<p>Ion channels are critical for rapid signaling between neurons and other excitable cells found in the brain as well as throughout the body. Many channels bind a variety of specific small molecules including drugs that modulate their activity in ways that can be used as therapies to counteract diseases/disorders of the nervous system or other cellular signaling abnormalities. Although drug binding is a powerful approach to tuning neural signaling, the molecular mechanisms by which many drugs exert their effects remain poorly understood.
 					</p>
-					<p>The lab utilizes a variety of approaches such as fluorescence spectroscopy, electrophysiology and biochemistry at both single-molecule and ensemble levels to probe the dynamic motions of proteins that underlie their biological function. As part of this process, we are also interested in developing new approaches or workflows to resolve the interplay between distinct domains within individual proteins, and uncover the role of these interactions in drug binding and modulation.
+					<p><em>The overarching goal of my research program is to understand the physical basis by which small molecules and drugs such as benzodiazepines drive channel behavior. This foundatyion will provide the necessary framework for the rational development of novel therapeutic strategies for improved treatments that impact human health.</em>
 					</p>
+					<p>The lab utilizes a variety of approaches such as fluorescence spectroscopy, electrophysiology and biochemistry at both single-molecule and ensemble levels to probe the dynamic motions of proteins that underlie their biological function. As part of this process, we are also interested in developing new approaches or workflows to resolve the molecular forces and interactions involved in drug binding and modulation.
+					</p>
+					<hr />
+					<h4> Measuring ion flux through natures transistors/transducers.
+					</h4>
+					<div style="display: flex">
+						<div style="flex: 50%">
+							<img src="images/cell-attached-3d.jpg" width="100%">
+						</div>
+						<div style="flex: 50%; margin-left: 10px">
+							<img src="images/single-channel.png" width="100%">
+						</div>
+					</div>
+					<hr />
+					<h4> Single-molecule fluorescence imaging.
+					</h4>
+					<div style="display: flex">
+						<div style="flex: 50%">
+							<img src="images/lasers.jpg" width="100%">
+						</div>
+						<div style="flex: 50%; margin-left: 10px">
+							<img src="images/sm_overlay.png" width="100%">
+						</div>
+					</div>
+					<hr />
 					<ul>
-						<li>
-							Electrophysiology - whole cell and single-channel
-						</li>
 						<li>
 							Cell-derived nanovesicles for single-molecule fluorescence
 						</li>
@@ -160,7 +186,7 @@
 					<span class="sectiontitle">People</span>
 					<div>
 						<img src="images/marcel.jpg">
-						Marcel Goldschen-Ohm, Assistant Professor<br/>
+						Marcel Goldschen-Ohm, PhD, Assistant Professor<br/>
 						<a href="mailto:goldschen-ohm@utexas.edu">goldschen-ohm@utexas.edu</a>
 						&nbsp;&bull;&nbsp;
 						<a href="https://github.com/marcel-goldschen-ohm">GitHub</a>
@@ -173,11 +199,11 @@
 					</div>
 					<div>
 						<img src="images/wagner.jpg">
-						Joseph (Wagner) Nors
+						Joseph (Wagner) Nors, BS
 					</div>
 					<div>
 						<img src="images/vishal.jpg">
-						Vishal Patel
+						Vishal Patel, BS
 					</div>
 					<div>
 						<img src="images/argha.jpg">
@@ -186,6 +212,14 @@
 					<div>
 						<img src="images/khue.jpg">
 						Khue Tran
+					</div>
+					<div>
+						<img src="images/mohamed.jpg">
+						Mohamed Salinas
+					</div>
+					<div>
+						<img src="images/icons8-customer-80.png">
+						Darong Qi
 					</div>
 				</div>
 
@@ -200,11 +234,15 @@
 						</li>
             <li>
               <a href="https://github.com/ChandaLab/DISC">DISC</a>:
-							Divisive Segmentation and Clustering algorithm for fast unsupervised idealization of piecewise constant time series. MATLAB
+							MATLAB implementation of the DIvisive Segmentation and Clustering algorithm DISC for fast unsupervised idealization of piecewise constant time series.
+            </li>
+            <li>
+              <a href="https://github.com/marcel-goldschen-ohm/PlotXRegionsUITool">PlotXRegionsUITool</a>:
+							MATLAB tool for interactive plot x-axis region selection and analysis/manipulation of plotted data based on selected regions. Supports <a href="https://github.com/JimHokanson/plotBig_Matlab">plotBig_Matlab</a> for fast plotting of large data traces (e.g. single channel records).
             </li>
             <li>
               <a href="https://github.com/marcel-goldschen-ohm/PatchMeister">PatchMeister</a>:
-							Electrophysiology (or other time series) analysis GUI for MATLAB.
+							MATLAB graphical user interface for electrophysiology (or other time series) analysis. Note, in the future PlotXRegionsUITool will either supercede or merge with this package.
             </li>
             <li>
               <a href="https://sourceforge.net/projects/modbuilder">Kinetic Model Builder</a>:
@@ -232,13 +270,18 @@
 				<div id="publications" class="section">
 					<a class="gototop" href="#header">go to top</a>
 					<span class="sectiontitle">Publications</span>
-					2019
+
+					2020
 					<ul>
 						<li>
 							<span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
-							<a class="pubtitle" href="https://doi.org/10.1101/603761">"High-Throughput Single-Molecule Analysis via Divisive Segmentation and Clustering"</a>
-							<span class="pubjournal">bioRxiv preprint</span>
+							<a class="pubtitle" href="https://doi.org/10.7554/eLife.53357">"Top-down machine learning approach for high-throughput single-molecule analysis"</a>
+							<span class="pubjournal">eLife</span>
 						</li>
+					</ul>
+
+					2019
+					<ul>
 						<li>
 							<span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
 							<a class="pubtitle" href="http://dx.doi.org/10.1085/jgp.201812278">"Batrachotoxin acts as a stent to hold open homotetrameric prokaryotic voltage-gated sodium channels"</a>
