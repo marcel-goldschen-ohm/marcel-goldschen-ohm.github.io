@@ -178,6 +178,7 @@ section img {
 }
 #about div img {
   margin: 10px;
+  height: auto;
 }
 @media (min-width: 650px) {
   #about div {
