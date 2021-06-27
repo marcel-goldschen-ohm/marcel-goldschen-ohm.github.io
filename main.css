@@ -175,10 +175,10 @@ section img {
 #about div {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 #about div img {
   margin: 10px;
-  height: auto;
 }
 @media (min-width: 650px) {
   #about div {
