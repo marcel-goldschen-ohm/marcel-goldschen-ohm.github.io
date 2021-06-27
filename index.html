@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="./images/favicon.png" />
     <!-- version number in CSS href serves as cache buster -->
-    <link rel="stylesheet" type="text/css" href="./main.css?v=20210627" />
+    <link rel="stylesheet" type="text/css" href="./main.css?v=20210627.1" />
   </head>
 
   <body>
@@ -35,8 +35,20 @@
       }
     </script>
 
-    <!-- hook for gototop links -->
+    <!-- Go to Top Button -->
     <div id="page-top"></div>
+    <a id="gototop" href="#page-top">go to top</a>
+    <script>
+      // toggle gototop visibility based on page scroll position
+      var gototop = document.getElementById("gototop");
+      window.onscroll = function() {
+        if (
+          (document.body.scrollTop > 100) ||
+          (document.documentElement.scrollTop > 100)
+        ) { gototop.style.display = "block"; }
+        else { gototop.style.display = "none"; }
+      };
+    </script>
 
     <header>
       <div class="wrapper">
@@ -77,7 +89,6 @@
 
         <main>
           <section id="about">
-            <!-- <a class="gototop" href="#page-top">go to top</a> -->
             <h2>About</h2>
             <!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
             <p>
@@ -143,7 +154,6 @@
           </section>  <!-- ./#about -->
 
           <section id="people">
-            <a class="gototop" href="#page-top">go to top</a>
             <h2>People</h2>
             <div class="profile">
               <img src="images/marcel_goldschen-ohm.jpg" alt="Marcel Goldschen-Ohm">
@@ -201,7 +211,6 @@
           </section>  <!-- ./#people -->
 
           <section id="software">
-            <a class="gototop" href="#page-top">go to top</a>
             <h2>Software</h2>
             <ul>
               <li>
@@ -232,7 +241,6 @@
           </section>  <!-- ./#software -->
 
           <section id="resources">
-            <a class="gototop" href="#page-top">go to top</a>
             <h2>Resources</h2>
             <ul>
               <li>
@@ -242,7 +250,6 @@
           </section>  <!-- ./#resources -->
 
           <section id="publications">
-            <a class="gototop" href="#page-top">go to top</a>
             <h2>Publications</h2>
 
             2021
@@ -417,7 +424,6 @@
         <!-- right sidebar -->
         <div id="sidebar">
           <section id="bioelectricity-seminars">
-            <a class="gototop" href="#page-top">go to top</a>
             <h2>Bioelectricity Seminar Series</h2>
 
             <a href="https://calendar.google.com/calendar/u/0?cid=Y2RoOWF2dnQwc3Q4dms3Zjh1bzFkNmNlNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Shared Calendar</a>
@@ -610,8 +616,6 @@
 					Responsive design by
 					<a href="https://twit96.github.io/">Tyler Wittig</a>
 				</span>
-
-        <a class="gototop" href="#page-top">go to top</a>
       </div>
     </footer>
 

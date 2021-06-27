@@ -4,6 +4,7 @@ Table of Contents
 
 - Config
 - Background
+- Go to Top Button
 - Top Bar Content
 - Page Layout
 - Page Sections
@@ -43,7 +44,6 @@ a {
   color: #cc5500;
 }
 a:hover { text-decoration: underline; }
-a.gototop { float: right; }
 
 ul {
   /* override default for small screens */
@@ -79,6 +79,22 @@ ul li {
 
 /* debugging - make page content transparent to view bg */
 /* #page-content { opacity: 0.1; } */
+
+
+/* Go to Top Button -------------------------------------------------------- */
+a#gototop {
+  display: none;  /* script on page shows/hides this element */
+  position: fixed;
+  bottom: 10px;
+  /* position right based on max width of page content wrapper */
+  right: max(10px, calc(((100vw - 1050px) / 2)));
+  background: #cc5500;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 0 5px 1px black;
+  /* border: 2px solid black; */
+  border-radius: 5px;
+}
 
 
 /* Top Bar Content --------------------------------------------------------- */
