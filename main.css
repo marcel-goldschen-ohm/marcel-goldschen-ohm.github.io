@@ -102,6 +102,7 @@ section img {
   border-radius: 5px;
 }
 #sidebar .gototop { display: inline; }
+
 @media (min-width: 900px) {
   #page-content { padding: 0 10px; }
   #page-content > .wrapper {
