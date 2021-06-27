@@ -146,6 +146,7 @@ section img {
 #people .profile {
   padding-top: 10px;
   display: flex;
+  align-items: flex-start;
 }
 #people .profile img {
   width: 82px;
