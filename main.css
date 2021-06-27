@@ -9,6 +9,7 @@ Table of Contents
 - Page Layout
 - Page Sections
 - Footer
+- Large Screen Breakpoint
 
 */
 
@@ -168,30 +169,6 @@ section img {
   box-shadow: 0 0 5px 1px gray;
   border-radius: 5px;
 }
-#sidebar .gototop { display: inline; }
-
-/* Page Layout Breakpoint */
-@media (min-width: 900px) {
-  #page-content { padding: 0 10px; }
-  #page-content > .wrapper {
-    display: flex;
-    justify-content: center
-  }
-  main { width: 70%; }
-  #sidebar { width: 30%; }
-  section {
-    margin: 10px 0;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-  }
-  section:nth-of-type(2n),
-  #sidebar section:nth-of-type(2n-1) {
-    background-color: lightgray;
-  }
-  #sidebar section { margin-left: 10px; }
-  #sidebar .gototop { display: none; }
-}
 
 
 /* Page Sections ----------------------------------------------------------- */
@@ -243,4 +220,27 @@ footer {
   color: white;
   padding: 10px;
   overflow: auto;  /* bugfix - contain floated link */
+}
+
+
+/* Large Screen Breakpoint ------------------------------------------------- */
+@media (min-width: 900px) {
+  #page-content { padding: 0 10px; }
+  #page-content > .wrapper {
+    display: flex;
+    justify-content: center
+  }
+  main { width: 70%; }
+  #sidebar { width: 30%; }
+  section {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  section:nth-of-type(2n),
+  #sidebar section:nth-of-type(2n-1) {
+    background-color: lightgray;
+  }
+  #sidebar section { margin-left: 10px; }
 }
