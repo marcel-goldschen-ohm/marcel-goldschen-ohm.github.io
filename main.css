@@ -1,5 +1,17 @@
+/*
 
+Table of Contents
 
+- Config
+- Background
+- Top Bar Content
+- Page Layout
+- Page Sections
+- Footer
+
+*/
+
+/* Config ------------------------------------------------------------------ */
 * { box-sizing: border-box; }
 
 body {
@@ -47,6 +59,29 @@ ul li {
   margin-bottom: 10px;
 }
 
+
+/* Background -------------------------------------------------------------- */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+#bg span {
+  position: fixed;
+  opacity: 0.05;
+  border-radius: 20px;
+}
+#bg span:nth-of-type(2n) { background: black; }
+#bg span:nth-of-type(2n-1) { background: lightgray; }
+
+/* debugging - make page content transparent to view bg */
+/* #page-content { opacity: 0.1; } */
+
+
+/* Top Bar Content --------------------------------------------------------- */
 header {
   background-color: black;
   color: white;
@@ -99,6 +134,8 @@ nav a {
   display: inline-block;
 }
 
+
+/* Page Layout ------------------------------------------------------------- */
 #page-content {
   line-height: 125%;
 }
@@ -117,6 +154,7 @@ section img {
 }
 #sidebar .gototop { display: inline; }
 
+/* Page Layout Breakpoint */
 @media (min-width: 900px) {
   #page-content { padding: 0 10px; }
   #page-content > .wrapper {
@@ -129,7 +167,6 @@ section img {
     margin: 10px 0;
     padding: 10px;
     border: 2px solid black;
-    /* box-shadow: 0 0 5px 1px black; */
     border-radius: 10px;
   }
   section:nth-of-type(2n),
@@ -140,6 +177,8 @@ section img {
   #sidebar .gototop { display: none; }
 }
 
+
+/* Page Sections ----------------------------------------------------------- */
 #about div {
   display: flex;
   flex-direction: column;
@@ -168,7 +207,6 @@ section img {
   margin-right: 10px;
 }
 
-
 #publications .pubjournal {
   font-style: italic;
   font-weight: bold;
@@ -181,6 +219,8 @@ section img {
   font-weight: bold;
 }
 
+
+/* Footer ------------------------------------------------------------------ */
 footer {
   background-color: black;
   box-shadow: 0 0 5px 1px black;

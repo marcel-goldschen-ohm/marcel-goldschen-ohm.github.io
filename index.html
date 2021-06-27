@@ -5,10 +5,36 @@
 		<title>Goldschen-Ohm Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="./images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <!-- version number in CSS href serves as cache buster -->
+    <link rel="stylesheet" type="text/css" href="./main.css?v=20210627" />
   </head>
 
   <body>
+
+    <!-- Background Pattern -->
+    <div id="bg"></div>
+    <script>
+      // add random squares to background element
+      var bg = document.getElementById("bg");
+      var rand_x;
+      var rand_y;
+      var rand_size;
+      var rand_rotation;
+      for (i=0; i<30; i++) {
+        rand_x = Math.floor(Math.random() * 100);
+        rand_y = Math.floor(Math.random() * 100);
+        rand_size = Math.floor(Math.random() * 15) + 10;
+        rand_rotation = Math.floor(Math.random() * 360);
+        var rand_span = document.createElement("span");
+        rand_span.style.left = rand_x + "vw";
+        rand_span.style.top = rand_y + "vh";
+        rand_span.style.width = rand_size + "vmin";
+        rand_span.style.height = rand_size + "vmin";
+        rand_span.style.transform = "rotate(" + rand_rotation + "deg)";
+        bg.insertAdjacentElement("beforeend", rand_span);
+      }
+    </script>
+
     <!-- hook for gototop links -->
     <div id="page-top"></div>
 
