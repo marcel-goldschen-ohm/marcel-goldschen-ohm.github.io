@@ -1,133 +1,37 @@
-<html>
-	<head>
-		<style>
-			body {
-				display: grid;
-				grid-template-rows: 90px 30px 1fr 50px; // header, nav, main, footer
-				width: 100vw;
-				height: 100vh;
-				margin: 0px;
-				padding: 0px;
-				background-color: lightgray;
-				font-family: Arial;
-			}
-			.pageColumnLayout {
-				display: grid;
-				grid-template-columns: 1fr 1010px 1fr; // gutter page gutter
-				width: 100vw;
-			}
-			.mainColumnLayout {
-				display: grid;
-				grid-template-columns: 700px 10px 300px; // main spacer side
-				width: 1010px;
-			}
-			#header {
-				background-color: black;
-				color: white;
-				padding: 10px;
-			}
-			#navbar {
-				background-color: #cc5500;
-				color: white;
-				padding: 5px;
-			}
-			#main {
-				background-color: gray;
-			}
-			#footer {
-				background-color: black;
-				color: white;
-				padding: 10px;
-			}
-			#navbar div {
-				display: flex;
-				align-items: center;
-			}
-			#navbar a {
-				text-decoration: none;
-				color: white;
-			}
-			.section {
-				background-color: lightgray;
-				border: 2px solid black;
-				border-radius: 10px;
-				margin-top: 10px;
-				margin-bottom: 10px;
-				padding: 10px;
-			}
-			.sectiontitle {
-				font-size: 16pt;
-				display: block;
-				margin-bottom: 10px;
-			}
-			.gototop {
-				float: right;
-			}
-			#people div {
-				height: 110px;
-				padding-top: 10px;
-			}
-			#people div img {
-				float: left;
-				width: 82px;
-				margin-right: 10px;
-			}
-			#people ul li a {
-				text-decoration: none;
-				color: blue;
-			}
-			.pubjournal {
-				font-style: italic;
-				font-weight: bold;
-			}
-			.seminar-speaker {
-				font-weight: bold;
-			}
-			a {
-				text-decoration: none;
-				color: #cc5500;
-			}
-			ul li {
-				margin-bottom: 10px;
-			}
-			#bioelectricity-seminars ul {
-				margin-left: 10px;
-				padding-left: 0;
-			}
-		</style>
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- //////////////////// HEADER //////////////////// -->
-		<div id="header" class="pageColumnLayout">
-			<!-- left gutter -->
-			<div></div>
-			<!-- page column -->
-			<div>
-				<div style="float:right">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+  </head>
+
+  <body>
+    <!-- hook for gototop links -->
+    <div id="page-top"></div>
+
+    <header>
+      <div class="wrapper">
+        <div class="left-content">
+          <h1>Goldschen-Ohm Lab</h1>
+  				<span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
+        </div>
+        <div class="right-content">
 					<a href="https://neuroscience.utexas.edu">
 						<img src="images/UT_logo.png" height="50px">
 					</a>
 					<br/>
-					<a href="https://neuroscience.utexas.edu" style="float: right; color: white; font-family: Times;">
+					<a href="https://neuroscience.utexas.edu" style="color: white; font-family: Times;">
 						Department of Neuroscience
 					</a>
 				</div>
-				<span style="font-size: 32pt;">Goldschen-Ohm Lab</span>
-				<br/>
-				<span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
 			</div>
-			<!-- right gutter -->
-			<div></div>
-		</div>
+    </header>
 
-		<!-- //////////////////// NAVBAR //////////////////// -->
-		<div id="navbar" class="pageColumnLayout">
-			<!-- left gutter -->
-			<div></div>
-			<!-- page column -->
-			<div>
-				<a href="#about">About</a>
+    <nav>
+      <div class="wrapper">
+        <a href="#about">About</a>
 				&nbsp;&bull;&nbsp;
 				<a href="#people">People</a>
         &nbsp;&bull;&nbsp;
@@ -138,539 +42,552 @@
 				<a href="#publications">Publications</a>
 				&nbsp;&bull;&nbsp;
 				<a href="#bioelectricity-seminars">Bioelectricity Seminars</a>
-			</div>
-			<!-- right gutter -->
-			<div></div>
-		</div>
+      </div>
+    </nav>
 
-		<!-- //////////////////// MAIN //////////////////// -->
-		<div id="main" class="pageColumnLayout">
-			<!-- left gutter -->
-			<div></div>
-			<!-- page column -->
-			<div class="mainColumnLayout">
-				<!-- main column -->
-				<div>
+    <div id="page-content">
+      <div class="wrapper">
 
-					<!-- //////////////////// ABOUT //////////////////// -->
-					<div id="about" class="section">
-						<!-- <a class="gototop" href="#header">go to top</a> -->
-						<span class="sectiontitle">About</span>
-						<!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
-						<p>Ion channels are critical for rapid signaling between neurons and other excitable cells found in the brain as well as throughout the body. Many channels bind a variety of specific small molecules including drugs that modulate their activity in ways that can be used as therapies to counteract diseases/disorders of the nervous system or other cellular signaling abnormalities. Although drug binding is a powerful approach to tuning neural signaling, the molecular mechanisms by which many drugs exert their effects remain poorly understood.
-						</p>
-						<p><em>The overarching goal of my research program is to understand the physical basis by which small molecules and drugs such as benzodiazepines drive channel behavior. This foundation will provide the necessary framework for the rational development of novel therapeutic strategies for improved treatments that impact human health.</em>
-						</p>
-						<p>The lab utilizes a variety of approaches such as fluorescence spectroscopy, electrophysiology and biochemistry at both single-molecule and ensemble levels to probe the dynamic motions of proteins that underlie their biological function. As part of this process, we are also interested in developing new approaches or workflows to resolve the molecular forces and interactions involved in drug binding and modulation.
-						</p>
-						<hr />
-						<h4> Ion channels are natures transistors/transducers.
-						</h4>
-						<div style="display: flex">
-							<div style="flex: 50%">
-								<img src="images/cell-attached-3d.jpg" width="100%">
-							</div>
-							<div style="flex: 50%; margin-left: 10px">
-								<img src="images/single-channel.png" width="100%">
-							</div>
-						</div>
-						<hr />
-						<h4> Single-molecule fluorescence imaging.
-						</h4>
-						<div style="display: flex">
-							<div style="flex: 50%">
-								<img src="images/lasers.jpg" width="100%">
-							</div>
-							<div style="flex: 50%; margin-left: 10px">
-								<img src="images/sm_overlay.png" width="100%">
-							</div>
-						</div>
-						<hr />
-						<ul>
-							<li>
-								Cell-derived nanovesicles for single-molecule fluorescence
-							</li>
-							<li>
-								Single-molecule ligand binding dynamics
-							</li>
-							<li>
-								FRET-based approaches to probe conformational dynamics
-							</li>
-							<li>
-								Unnatrual Amino Acids
-							</li>
-							<li>
-								Click Chemistry for site-specific fluorescence
-							</li>
-						</ul>
-					</div>
+        <main>
+          <section id="about">
+            <!-- <a class="gototop" href="#page-top">go to top</a> -->
+            <h2>About</h2>
+            <!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
+            <p>
+              Ion channels are critical for rapid signaling between neurons and
+              other excitable cells found in the brain as well as throughout the
+              body. Many channels bind a variety of specific small molecules
+              including drugs that modulate their activity in ways that can be
+              used as therapies to counteract diseases/disorders of the nervous
+              system or other cellular signaling abnormalities. Although drug
+              binding is a powerful approach to tuning neural signaling, the
+              molecular mechanisms by which many drugs exert their effects remain
+              poorly understood.
+            </p>
+            <p>
+              <em>
+                The overarching goal of my research program is to understand
+                the physical basis by which small molecules and drugs such as
+                benzodiazepines drive channel behavior. This foundation will
+                provide the necessary framework for the rational development of
+                novel therapeutic strategies for improved treatments that impact
+                human health.
+              </em>
+            </p>
+            <p>
+              The lab utilizes a variety of approaches such as fluorescence
+              spectroscopy, electrophysiology and biochemistry at both
+              single-molecule and ensemble levels to probe the dynamic motions of
+              proteins that underlie their biological function. As part of this
+              process, we are also interested in developing new approaches or
+              workflows to resolve the molecular forces and interactions involved
+              in drug binding and modulation.
+            </p>
+            <hr />
+            <h3>Ion channels are natures transistors/transducers.</h3>
+            <div>
+              <img src="images/cell-attached-3d.jpg">
+              <img src="images/single-channel.png">
+            </div>
+            <hr />
+            <h3>Single-molecule fluorescence imaging.</h3>
+            <div>
+              <img src="images/lasers.jpg">
+              <img src="images/sm_overlay.png">
+            </div>
+            <hr />
+            <ul>
+              <li>
+                Cell-derived nanovesicles for single-molecule fluorescence
+              </li>
+              <li>
+                Single-molecule ligand binding dynamics
+              </li>
+              <li>
+                FRET-based approaches to probe conformational dynamics
+              </li>
+              <li>
+                Unnatrual Amino Acids
+              </li>
+              <li>
+                Click Chemistry for site-specific fluorescence
+              </li>
+            </ul>
+          </section>  <!-- ./#about -->
 
-					<!-- //////////////////// PEOPLE //////////////////// -->
-					<div id="people" class="section">
-						<a class="gototop" href="#header">go to top</a>
-						<span class="sectiontitle">People</span>
-						<div>
-							<img src="images/marcel_goldschen-ohm.jpg">
-							Marcel Goldschen-Ohm, PhD, Assistant Professor<br/>
-							<a href="mailto:goldschen-ohm@utexas.edu">goldschen-ohm@utexas.edu</a>
-							&nbsp;&bull;&nbsp;
-							<a href="https://github.com/marcel-goldschen-ohm">GitHub</a>
-							&nbsp;&bull;&nbsp;
-							<a href="www.linkedin.com/in/marcel-goldschen-ohm">LinkedIn</a>
-						</div>
-						<div>
-							<img src="images/shipra_gupta.jpg">
-							Shipra Gupta, PhD
-						</div>
-						<div>
-							<img src="images/wagner_joseph_nors.jpg">
-							Joseph (Wagner) Nors, BS
-						</div>
-						<div>
-							<img src="images/vishal_patel.jpg">
-							Vishal Patel, BS
-						</div>
-						<div>
-							<img src="images/argha_bandyopadhyay.jpg">
-							Argha Bandyopadhyay, BS
-						</div>
-						<div>
-							<img src="images/khue_tran.jpg">
-							Khue Tran, BS
-						</div>
-						<div>
-							<img src="images/mohamed_arturo_salinas.jpg">
-							Arturo (Mohamed) Salinas, BS
-						</div>
-						<div>
-							<img src="images/darong_qi.jpeg">
-							Darong Qi, BS
-						</div>
-					</div>
+          <section id="people">
+            <a class="gototop" href="#page-top">go to top</a>
+            <h2>People</h2>
+            <div class="profile">
+              <img src="images/marcel_goldschen-ohm.jpg">
+              <div class="details">
+                Marcel Goldschen-Ohm, PhD, Assistant Professor<br/>
+                <a href="mailto:goldschen-ohm@utexas.edu">goldschen-ohm@utexas.edu</a>
+                &nbsp;&bull;&nbsp;
+                <a href="https://github.com/marcel-goldschen-ohm">GitHub</a>
+                &nbsp;&bull;&nbsp;
+                <a href="www.linkedin.com/in/marcel-goldschen-ohm">LinkedIn</a>
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/shipra_gupta.jpg">
+              <div class="details">
+                Shipra Gupta, PhD
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/wagner_joseph_nors.jpg">
+              <div class="details">
+                Joseph (Wagner) Nors, BS
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/vishal_patel.jpg">
+              <div class="details">
+                Vishal Patel, BS
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/argha_bandyopadhyay.jpg">
+              <div class="details">
+                Argha Bandyopadhyay, BS
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/khue_tran.jpg">
+              <div class="details">
+                Khue Tran, BS
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/mohamed_arturo_salinas.jpg">
+              <div class="details">
+                Arturo (Mohamed) Salinas, BS
+              </div>
+            </div>
+            <div class="profile">
+              <img src="images/darong_qi.jpeg">
+              <div class="details">
+                Darong Qi, BS
+              </div>
+            </div>
+          </section>  <!-- ./#people -->
 
-	        <!-- //////////////////// SOFTWARE //////////////////// -->
-	        <div id="software" class="section">
-	          <a class="gototop" href="#header">go to top</a>
-	          <span class="sectiontitle">Software</span>
-	          <ul>
-							<li>
-								<a href="https://github.com/marcel-goldschen-ohm/single-molecule-imaging-toolbox">single-molecule-imaging-toolbox</a>:
-								A suite of programs for single-molecule image analysis in MATLAB.
-							</li>
-	            <li>
-	              <a href="https://github.com/ChandaLab/DISC">DISC</a>:
-								MATLAB implementation of the DIvisive Segmentation and Clustering algorithm DISC for fast unsupervised idealization of piecewise constant time series.
-	            </li>
-	            <li>
-	              <a href="https://github.com/marcel-goldschen-ohm/PlotXRegionsUITool">PlotXRegionsUITool</a>:
-								MATLAB tool for interactive plot x-axis region selection and analysis/manipulation of plotted data based on selected regions. Supports <a href="https://github.com/JimHokanson/plotBig_Matlab">plotBig_Matlab</a> for fast plotting of large data traces (e.g. single channel records).
-	            </li>
-	            <li>
-	              <a href="https://github.com/marcel-goldschen-ohm/PatchMeister">PatchMeister</a>:
-								MATLAB graphical user interface for electrophysiology (or other time series) analysis. Note, in the future PlotXRegionsUITool will either supercede or merge with this package.
-	            </li>
-	            <li>
-	              <a href="https://sourceforge.net/projects/modbuilder">Kinetic Model Builder</a>:
-								HMM model building and optimization GUI for patch-clamp electrophysiology (or other time series) data. MacOSX only.
-	            </li>
-	            <li>
-	              <a href="https://github.com/marcel-goldschen-ohm/EigenLab">EigenLab</a>:
-								C++ utility for parsing/evaluating matrix math equations input at run time in a format similar to MATLAB (requires Eigen for matrix math).
-	            </li>
-	          </ul>
-	        </div>
+          <section id="software">
+            <a class="gototop" href="#page-top">go to top</a>
+            <h2>Software</h2>
+            <ul>
+              <li>
+                <a href="https://github.com/marcel-goldschen-ohm/single-molecule-imaging-toolbox">single-molecule-imaging-toolbox</a>:
+                A suite of programs for single-molecule image analysis in MATLAB.
+              </li>
+              <li>
+                <a href="https://github.com/ChandaLab/DISC">DISC</a>:
+                MATLAB implementation of the DIvisive Segmentation and Clustering algorithm DISC for fast unsupervised idealization of piecewise constant time series.
+              </li>
+              <li>
+                <a href="https://github.com/marcel-goldschen-ohm/PlotXRegionsUITool">PlotXRegionsUITool</a>:
+                MATLAB tool for interactive plot x-axis region selection and analysis/manipulation of plotted data based on selected regions. Supports <a href="https://github.com/JimHokanson/plotBig_Matlab">plotBig_Matlab</a> for fast plotting of large data traces (e.g. single channel records).
+              </li>
+              <li>
+                <a href="https://github.com/marcel-goldschen-ohm/PatchMeister">PatchMeister</a>:
+                MATLAB graphical user interface for electrophysiology (or other time series) analysis. Note, in the future PlotXRegionsUITool will either supercede or merge with this package.
+              </li>
+              <li>
+                <a href="https://sourceforge.net/projects/modbuilder">Kinetic Model Builder</a>:
+                HMM model building and optimization GUI for patch-clamp electrophysiology (or other time series) data. MacOSX only.
+              </li>
+              <li>
+                <a href="https://github.com/marcel-goldschen-ohm/EigenLab">EigenLab</a>:
+                C++ utility for parsing/evaluating matrix math equations input at run time in a format similar to MATLAB (requires Eigen for matrix math).
+              </li>
+            </ul>
+          </section>  <!-- ./#software -->
 
-	        <!-- //////////////////// RESOURCES //////////////////// -->
-	        <div id="resources" class="section">
-	          <a class="gototop" href="#header">go to top</a>
-	          <span class="sectiontitle">Resources</span>
-						<ul>
-							<li>
-								<a href="https://biorender.com">bioRENDER</a>: Images and clip art for biology.
-							</li>
-						</ul>
-	        </div>
+          <section id="resources">
+            <a class="gototop" href="#page-top">go to top</a>
+            <h2>Resources</h2>
+            <ul>
+              <li>
+                <a href="https://biorender.com">bioRENDER</a>: Images and clip art for biology.
+              </li>
+            </ul>
+          </section>  <!-- ./#resources -->
 
-					<!-- //////////////////// PUBLICATIONS //////////////////// -->
-					<div id="publications" class="section">
-						<a class="gototop" href="#header">go to top</a>
-						<span class="sectiontitle">Publications</span>
+          <section id="publications">
+            <a class="gototop" href="#page-top">go to top</a>
+            <h2>Publications</h2>
 
-						2021
-						<ul>
-							<li>
-								<span class="pubauthors">Joseph W. Nors, Shipra Gupta, and Marcel P. Goldschen-Ohm.</span>
-								<a class="pubtitle" href="https://doi.org/10.7554/eLife.64400">"A critical residue in the alpha1 M2-M3 linker regulating mammalian GABAA receptor pore gating by diazepam"</a>
-								<span class="pubjournal">eLife</span>
-							</li>
-							<li>
-								<span class="pubauthors">Argha Bandyopadhyay and Marcel P. Goldschen-Ohm.</span>
-								<a class="pubtitle" href="https://doi.org/10.1101/2021.02.07.430124">"Unsupervised selection of optimal single-molecule time series idealization criterion"</a>
-								<span class="pubjournal">bioRxiv (and in review)</span>
-							</li>
-							<li>
-								<span class="pubauthors">Vishal R. Patel, Arturo M. Salinas, darong Qi, Shipra Gupta, David J. Sidote, and Marcel P. Goldschen-Ohm.</span>
-								<a class="pubtitle" href="">"Single-molecule imaging with cell-derived nanovesicles reveals early binding dynamics at a cyclic nucleotide-gated ion channel"</a>
-								<span class="pubjournal">(in review)</span>
-							</li>
-							<!-- <li>
-								<span class="pubauthors">M. Womack, O. Curtis, D. A. Rabson, O. Harrington Pinto, K. Wierzchos, S. Cruz Gonzalez, G. Sarid,C. Mentzer, N. Lastra, N. Pichette, N. Ruffini, T. Cox, I. Rivera, A. Micciche, C. Jackson, A. Homich, A. Tollison, S. Reed, J. Zilka, B. Henning, M. Spinar, S. Rosslyn Escoto, T. Erdahl, Marcel P. Goldschen-Ohm, and W. T. Uhl.</span>
-								<a class="pubtitle" href="https://doi.org/10.3847/PSJ/abd32c">"The visual lightcurve of comet C/1995 O1 (Hale–Bopp) from 1995 to 1999"</a>
-								<span class="pubjournal">The Planetary Science Journal</span>
-							</li> -->
-						</ul>
+            2021
+            <ul>
+              <li>
+                <span class="pubauthors">Joseph W. Nors, Shipra Gupta, and Marcel P. Goldschen-Ohm.</span>
+                <a class="pubtitle" href="https://doi.org/10.7554/eLife.64400">"A critical residue in the alpha1 M2-M3 linker regulating mammalian GABAA receptor pore gating by diazepam"</a>
+                <span class="pubjournal">eLife</span>
+              </li>
+              <li>
+                <span class="pubauthors">Argha Bandyopadhyay and Marcel P. Goldschen-Ohm.</span>
+                <a class="pubtitle" href="https://doi.org/10.1101/2021.02.07.430124">"Unsupervised selection of optimal single-molecule time series idealization criterion"</a>
+                <span class="pubjournal">bioRxiv (and in review)</span>
+              </li>
+              <li>
+                <span class="pubauthors">Vishal R. Patel, Arturo M. Salinas, darong Qi, Shipra Gupta, David J. Sidote, and Marcel P. Goldschen-Ohm.</span>
+                <a class="pubtitle" href="">"Single-molecule imaging with cell-derived nanovesicles reveals early binding dynamics at a cyclic nucleotide-gated ion channel"</a>
+                <span class="pubjournal">(in review)</span>
+              </li>
+              <!-- <li>
+                <span class="pubauthors">M. Womack, O. Curtis, D. A. Rabson, O. Harrington Pinto, K. Wierzchos, S. Cruz Gonzalez, G. Sarid,C. Mentzer, N. Lastra, N. Pichette, N. Ruffini, T. Cox, I. Rivera, A. Micciche, C. Jackson, A. Homich, A. Tollison, S. Reed, J. Zilka, B. Henning, M. Spinar, S. Rosslyn Escoto, T. Erdahl, Marcel P. Goldschen-Ohm, and W. T. Uhl.</span>
+                <a class="pubtitle" href="https://doi.org/10.3847/PSJ/abd32c">"The visual lightcurve of comet C/1995 O1 (Hale–Bopp) from 1995 to 1999"</a>
+                <span class="pubjournal">The Planetary Science Journal</span>
+              </li> -->
+            </ul>
 
-						2020
-						<ul>
-							<li>
-								<span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
-								<a class="pubtitle" href="https://doi.org/10.7554/eLife.53357">"Top-down machine learning approach for high-throughput single-molecule analysis"</a>
-								<span class="pubjournal">eLife</span>
-							</li>
-						</ul>
+            2020
+            <ul>
+              <li>
+                <span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
+                <a class="pubtitle" href="https://doi.org/10.7554/eLife.53357">"Top-down machine learning approach for high-throughput single-molecule analysis"</a>
+                <span class="pubjournal">eLife</span>
+              </li>
+            </ul>
 
-						2019
-						<ul>
-							<li>
-								<span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
-								<a class="pubtitle" href="http://dx.doi.org/10.1085/jgp.201812278">"Batrachotoxin acts as a stent to hold open homotetrameric prokaryotic voltage-gated sodium channels"</a>
-								<span class="pubjournal">Journal of General Physiology</span>
-							</li>
-						</ul>
+            2019
+            <ul>
+              <li>
+                <span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
+                <a class="pubtitle" href="http://dx.doi.org/10.1085/jgp.201812278">"Batrachotoxin acts as a stent to hold open homotetrameric prokaryotic voltage-gated sodium channels"</a>
+                <span class="pubjournal">Journal of General Physiology</span>
+              </li>
+            </ul>
 
-						<hr/>
-						Prior Publications<br/><br/>
-						2017
-						<ul>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
-								<a class="pubtitle" href="http://dx.doi.org/10.1016/j.cell.2017.07.019">"SnapShot: Channel Gating Mechanisms"</a>
-								<span class="pubjournal">Cell</span>
-							</li>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, David S. White, Vadim A. Klenchin, Baron Chanda, and Randall H. Goldsmith.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1002/anie.201612050">"Observing Single-Molecule Dynamics at Millimolar Concentrations"</a>
-								<span class="pubjournal">Angewandte Chemie (International Edition)</span>
-							</li>
-							<li>
-								<span class="pubauthors">Yaxian Zhao, Marcel P. Goldschen-Ohm, Jo&atilde;o H. Morais-Cabral, Baron Chanda, and Gail A. Robertson.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201611701">"The Intrinsically-liganded cyclic nucleotide-binding homology domain promotes KCNH channel activation"</a>
-								<span class="pubjournal">Journal of General Physiology</span>
-							</li>
-						</ul>
+            <hr/>
+            Prior Publications<br/><br/>
+            2017
+            <ul>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+                <a class="pubtitle" href="http://dx.doi.org/10.1016/j.cell.2017.07.019">"SnapShot: Channel Gating Mechanisms"</a>
+                <span class="pubjournal">Cell</span>
+              </li>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, David S. White, Vadim A. Klenchin, Baron Chanda, and Randall H. Goldsmith.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1002/anie.201612050">"Observing Single-Molecule Dynamics at Millimolar Concentrations"</a>
+                <span class="pubjournal">Angewandte Chemie (International Edition)</span>
+              </li>
+              <li>
+                <span class="pubauthors">Yaxian Zhao, Marcel P. Goldschen-Ohm, Jo&atilde;o H. Morais-Cabral, Baron Chanda, and Gail A. Robertson.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201611701">"The Intrinsically-liganded cyclic nucleotide-binding homology domain promotes KCNH channel activation"</a>
+                <span class="pubjournal">Journal of General Physiology</span>
+              </li>
+            </ul>
 
-						2016
-						<ul>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, Vadim A. Klenchin, David S. White, John B. Cowgill, Qiang Cui, Randall H. Goldsmith, and Baron Chanda.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.7554/eLife.20797">"Structure and dynamics underlying elementary ligand binding events in human pacemaking channels"</a>
-								<span class="pubjournal">eLife</span>
-							</li>
-						</ul>
+            2016
+            <ul>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, Vadim A. Klenchin, David S. White, John B. Cowgill, Qiang Cui, Randall H. Goldsmith, and Baron Chanda.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.7554/eLife.20797">"Structure and dynamics underlying elementary ligand binding events in human pacemaking channels"</a>
+                <span class="pubjournal">eLife</span>
+              </li>
+            </ul>
 
-						2015
-						<ul>
-							<li>
-								<span class="pubauthors">Huan Bao, Marcel Goldschen-Ohm, Pia Jeggle, Baron Chanda, J. Michael Edwardson, and Edwin R. Chapman.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.3141">"Exocytotic fusion pores are composed of both lipids and proteins"</a>
-	                            <span class="pubjournal">Nature Structural &amp; Molecular Biology</span>
-							</li>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.2997">"How to open a proton pore-more than S4?"</a>
-	                            <span class="pubjournal">Nature Structural &amp; Molecular Biology</span>
-							</li>
-						</ul>
+            2015
+            <ul>
+              <li>
+                <span class="pubauthors">Huan Bao, Marcel Goldschen-Ohm, Pia Jeggle, Baron Chanda, J. Michael Edwardson, and Edwin R. Chapman.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.3141">"Exocytotic fusion pores are composed of both lipids and proteins"</a>
+                              <span class="pubjournal">Nature Structural &amp; Molecular Biology</span>
+              </li>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1038/nsmb.2997">"How to open a proton pore-more than S4?"</a>
+                              <span class="pubjournal">Nature Structural &amp; Molecular Biology</span>
+              </li>
+            </ul>
 
-						2014
-						<ul>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, Alexander Haroldson, Mathew V. Jones, and Robert A. Pearce.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201411183">"A nonequilibrium binary elements-based kinetic model for benzodiazepine regulation of GABAA receptors"</a>
-								<span class="pubjournal">Journal of General Physiology</span>
-							</li>
-							<li>
-								<span class="pubauthors">Kevin Oelstrom, Marcel P. Goldschen-Ohm, Miguel Holmgren, and Baron Chanda.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms4420">"Evolutionarily conserved intracellular gate of voltage-dependent sodium channels"</a>
-								<span class="pubjournal">Nature Communications</span>
-							</li>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
-								<a class="pubtitle" href="http://dx.doi.org/10.1007/978-3-642-41588-3_9">"Probing Gating Mechanisms of Sodium Channels Using Pore Blockers"</a>
-								<span class="pubjournal">Handbook of Experimental Pharmacology</span>
-							</li>
-						</ul>
+            2014
+            <ul>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, Alexander Haroldson, Mathew V. Jones, and Robert A. Pearce.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201411183">"A nonequilibrium binary elements-based kinetic model for benzodiazepine regulation of GABAA receptors"</a>
+                <span class="pubjournal">Journal of General Physiology</span>
+              </li>
+              <li>
+                <span class="pubauthors">Kevin Oelstrom, Marcel P. Goldschen-Ohm, Miguel Holmgren, and Baron Chanda.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms4420">"Evolutionarily conserved intracellular gate of voltage-dependent sodium channels"</a>
+                <span class="pubjournal">Nature Communications</span>
+              </li>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
+                <a class="pubtitle" href="http://dx.doi.org/10.1007/978-3-642-41588-3_9">"Probing Gating Mechanisms of Sodium Channels Using Pore Blockers"</a>
+                <span class="pubjournal">Handbook of Experimental Pharmacology</span>
+              </li>
+            </ul>
 
-						2013
-						<ul>
-							<li>
-								<span class="pubauthors">Deborah L. Capes, Marcel P. Goldschen-Ohm, Manoel Arcisio-Miranda, Francisco Bezanilla, and Baron Chanda.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201310998">"Domain IV voltage-sensor movement is both sufficient and rate limiting for fast inactivation in sodium channels"</a>
-								<span class="pubjournal">Journal of General Physiology</span>
-							</li>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, Deborah L. Capes, Kevin M. Oelstrom, and Baron Chanda.</span>
-								<a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms2356">"Multiple pore conformations driven by asynchronous movements of voltage sensors in a eukaryotic sodium channel"</a>
-								<span class="pubjournal">Nature Communications</span>
-							</li>
-						</ul>
+            2013
+            <ul>
+              <li>
+                <span class="pubauthors">Deborah L. Capes, Marcel P. Goldschen-Ohm, Manoel Arcisio-Miranda, Francisco Bezanilla, and Baron Chanda.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1085/jgp.201310998">"Domain IV voltage-sensor movement is both sufficient and rate limiting for fast inactivation in sodium channels"</a>
+                <span class="pubjournal">Journal of General Physiology</span>
+              </li>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, Deborah L. Capes, Kevin M. Oelstrom, and Baron Chanda.</span>
+                <a class="pubtitle" href="https://dx.doi.org/10.1038/ncomms2356">"Multiple pore conformations driven by asynchronous movements of voltage sensors in a eukaryotic sodium channel"</a>
+                <span class="pubjournal">Nature Communications</span>
+              </li>
+            </ul>
 
-						2011
-						<ul>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner and Mathew V. Jones</span>
-								<a class="pubtitle" href="http://dx.doi.org/10.1124/mol.111.072033">"Three Arginines in the GABAA Receptor Binding Pocket Have Distinct Roles in the Formation and Stability of Agonist- versus Antagonist-Bound Complexes"</a>
-								<span class="pubjournal">Molecular Pharmacology</span>
-							</li>
-						</ul>
+            2011
+            <ul>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner and Mathew V. Jones</span>
+                <a class="pubtitle" href="http://dx.doi.org/10.1124/mol.111.072033">"Three Arginines in the GABAA Receptor Binding Pocket Have Distinct Roles in the Formation and Stability of Agonist- versus Antagonist-Bound Complexes"</a>
+                <span class="pubjournal">Molecular Pharmacology</span>
+              </li>
+            </ul>
 
-						2010
-						<ul>
-							<li>
-								<span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner, Steven Petrou and Mathew V. Jones</span>
-								<a class="pubtitle" href="http://dx.doi.org/10.1124/mol.109.058289">"An Epilepsy-Related Region in the GABAA Receptor Mediates Long-Distance Effects on GABA and Benzodiazepine Binding Sites"</a>
-								<span class="pubjournal">Molecular Pharmacology</span>
-							</li>
-						</ul>
+            2010
+            <ul>
+              <li>
+                <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner, Steven Petrou and Mathew V. Jones</span>
+                <a class="pubtitle" href="http://dx.doi.org/10.1124/mol.109.058289">"An Epilepsy-Related Region in the GABAA Receptor Mediates Long-Distance Effects on GABA and Benzodiazepine Binding Sites"</a>
+                <span class="pubjournal">Molecular Pharmacology</span>
+              </li>
+            </ul>
 
-						<!--
-						2005
-						<ul>
-							<li>
-								<span class="pubauthors">David A. Wagner, Marcel P. Goldschen-Ohm, Tim G. Hales and Mathew V. Jones</span>
-								<a class="pubtitle" href="https://doi.org/10.1523/JNEUROSCI.1658-05.2005">"Kinetics and spontaneous open probability conferred by the epsilon subunit of the GABAA receptor"</a>
-								<span class="pubjournal">Journal of Neuroscience</span>
-							</li>
-						</ul>
+            <!--
+            2005
+            <ul>
+              <li>
+                <span class="pubauthors">David A. Wagner, Marcel P. Goldschen-Ohm, Tim G. Hales and Mathew V. Jones</span>
+                <a class="pubtitle" href="https://doi.org/10.1523/JNEUROSCI.1658-05.2005">"Kinetics and spontaneous open probability conferred by the epsilon subunit of the GABAA receptor"</a>
+                <span class="pubjournal">Journal of Neuroscience</span>
+              </li>
+            </ul>
 
-						2004
-						<ul>
-							<li>
-								<span class="pubauthors">Eric Bach, Susan Coppersmith, Marcel Paz Goldschen, Robert Joynt and John Watrous</span>
-								<a class="pubtitle" href="https://doi.org/10.1016/j.jcss.2004.03.005">"One-dimensional quantum walks with absorbing boundaries"</a>
-								<span class="pubjournal">Journal of Computer and System Sciences</span>
-							</li>
-						</ul>
+            2004
+            <ul>
+              <li>
+                <span class="pubauthors">Eric Bach, Susan Coppersmith, Marcel Paz Goldschen, Robert Joynt and John Watrous</span>
+                <a class="pubtitle" href="https://doi.org/10.1016/j.jcss.2004.03.005">"One-dimensional quantum walks with absorbing boundaries"</a>
+                <span class="pubjournal">Journal of Computer and System Sciences</span>
+              </li>
+            </ul>
 
-						1997
-						<ul>
-							<li>
-								<span class="pubauthors">M. Braunstein, R. Comstock, P. Hoffman, M. Womack, F. Deglman, D. Pinnick, G. Aaker, M. Goldschen, A. Jacobson, J. Zilka, D. Faith, S. Moore, J. Ricotta, A Weist and C. Modi</span>
-								<a class="pubtitle" href="http://link.springer.com/article/10.1023%2FA%3A1006201100330">"A CCD Image Archive Of Comet C/1995 O1 (Hale-Bopp): Dust Expansion Velocities"</a>
-								<span class="pubjournal">Earth, Moon, and Planets</span>
-							</li>
-						</ul>
-						-->
+            1997
+            <ul>
+              <li>
+                <span class="pubauthors">M. Braunstein, R. Comstock, P. Hoffman, M. Womack, F. Deglman, D. Pinnick, G. Aaker, M. Goldschen, A. Jacobson, J. Zilka, D. Faith, S. Moore, J. Ricotta, A Weist and C. Modi</span>
+                <a class="pubtitle" href="http://link.springer.com/article/10.1023%2FA%3A1006201100330">"A CCD Image Archive Of Comet C/1995 O1 (Hale-Bopp): Dust Expansion Velocities"</a>
+                <span class="pubjournal">Earth, Moon, and Planets</span>
+              </li>
+            </ul>
+            -->
 
-					</div>
+          </section>  <!-- ./#publications -->
+        </main>
 
-				</div>
-				<!-- spacer -->
-				<div></div>
-				<!-- right column -->
-				<div>
+        <!-- right sidebar -->
+        <div id="sidebar">
+          <section id="bioelectricity-seminars">
+            <a class="gototop" href="#page-top">go to top</a>
+            <h2>Bioelectricity Seminar Series</h2>
 
-					<!-- //////////////////// SEMINARS //////////////////// -->
-					<div id="bioelectricity-seminars" class="section">
-						<!-- <a class="gototop" href="#header">go to top</a> -->
-						<span class="sectiontitle">Bioelectricity Seminar Series</span>
+            <a href="https://calendar.google.com/calendar/u/0?cid=Y2RoOWF2dnQwc3Q4dms3Zjh1bzFkNmNlNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Shared Calendar</a>
 
-						<a href="https://calendar.google.com/calendar/u/0?cid=Y2RoOWF2dnQwc3Q4dms3Zjh1bzFkNmNlNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Shared Calendar</a>
+            <hr />
+            Upcoming Seminars
+            <hr />
 
-						<hr />
-						Upcoming Seminars
-						<hr />
+            <ul>
+              <li>
+                2021-06-30 1:00 PM CST<br/>
+                <span class="seminar-speaker">Lucie Delmotte</span><br/>
+              </li>
+              <li>
+                2021-07-07 1:00 PM CST<br/>
+                <span class="seminar-speaker">Colin Nichols</span><br/>
+              </li>
+              <li>
+                2021-07-14 1:00 PM CST<br/>
+                <span class="seminar-speaker">Jon Lederer</span><br/>
+              </li>
+              <li>
+                2021-08-04 1:00 PM CST<br/>
+                <span class="seminar-speaker">Doug Fowler</span><br/>
+              </li>
+              <li>
+                2021-08-11 1:00 PM CST<br/>
+                <span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
+                Tutorial on NMR.
+              </li>
+              <li>
+                2021-08-18 1:00 PM CST<br/>
+                <span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
+              </li>
+              <li>
+                2021-08-25 1:00 PM CST<br/>
+                <span class="seminar-speaker">Ucheor (Brandon) Choi</span><br/>
+              </li>
+              <li>
+                2021-09-08 1:00 PM CST<br/>
+                <span class="seminar-speaker">Liguo Wang</span><br/>
+              </li>
+              <li>
+                2021-09-15 1:00 PM CST<br/>
+                <span class="seminar-speaker">Zhe Lu</span><br/>
+              </li>
+              <li>
+                2021-09-29 1:00 PM CST<br/>
+                <span class="seminar-speaker">László Csanády</span><br/>
+              </li>
+            </ul>
 
-						<ul>
-							<li>
-								2021-06-30 1:00 PM CST<br/>
-								<span class="seminar-speaker">Lucie Delmotte</span><br/>
-							</li>
-							<li>
-								2021-07-07 1:00 PM CST<br/>
-								<span class="seminar-speaker">Colin Nichols</span><br/>
-							</li>
-							<li>
-								2021-07-14 1:00 PM CST<br/>
-								<span class="seminar-speaker">Jon Lederer</span><br/>
-							</li>
-							<li>
-								2021-08-04 1:00 PM CST<br/>
-								<span class="seminar-speaker">Doug Fowler</span><br/>
-							</li>
-							<li>
-								2021-08-11 1:00 PM CST<br/>
-								<span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
-								Tutorial on NMR.
-							</li>
-							<li>
-								2021-08-18 1:00 PM CST<br/>
-								<span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
-							</li>
-							<li>
-								2021-08-25 1:00 PM CST<br/>
-								<span class="seminar-speaker">Ucheor (Brandon) Choi</span><br/>
-							</li>
-							<li>
-								2021-09-08 1:00 PM CST<br/>
-								<span class="seminar-speaker">Liguo Wang</span><br/>
-							</li>
-							<li>
-								2021-09-15 1:00 PM CST<br/>
-								<span class="seminar-speaker">Zhe Lu</span><br/>
-							</li>
-							<li>
-								2021-09-29 1:00 PM CST<br/>
-								<span class="seminar-speaker">László Csanády</span><br/>
-							</li>
-						</ul>
+            <hr/>
+            Past Seminars
+            <hr />
 
-						<hr/>
-						Past Seminars
-						<hr />
+            <ul>
+              <li>
+                2021-06-09<br/>
+                <span class="seminar-speaker">Brendan Lehnert</span><br/>
+                Peripheral mechanoreceptors and the development of body representation in the brain.
+              </li>
+              <li>
+                2021-01-20<br/>
+                <span class="seminar-speaker">Ron Elber</span><br/>
+              </li>
+              <li>
+                2020-12-09<br/>
+                <span class="seminar-speaker">Bill Kobertz</span><br/>
+              </li>
+              <li>
+                2020-11-18<br/>
+                <span class="seminar-speaker">Lucy Forest</span><br/>
+              </li>
+              <li>
+                2020-11-11<br/>
+                <span class="seminar-speaker">Alex Chesler</span><br/>
+              </li>
+              <li>
+                2020-11-04<br/>
+                <span class="seminar-speaker">David White</span><br/>
+              </li>
+              <li>
+                2020-10-28<br/>
+                <span class="seminar-speaker">Vladimir Yarov-Yarovoy</span><br/>
+              </li>
+              <li>
+                2020-10-21<br/>
+                <span class="seminar-speaker">Jennifer Pluznikk</span><br/>
+              </li>
+              <li>
+                2020-10-14<br/>
+                <span class="seminar-speaker">Colleen Clancy</span><br/>
+              </li>
+              <li>
+                2020-10-07<br/>
+                <span class="seminar-speaker">Nick Bellono</span><br/>
+              </li>
+              <li>
+                2020-09-23<br/>
+                <span class="seminar-speaker">Henry Colecraft</span><br/>
+              </li>
+              <li>
+                2020-09-16<br/>
+                <span class="seminar-speaker">Chris Ahern</span><br/>
+              </li>
+              <li>
+                2020-09-09<br/>
+                <span class="seminar-speaker">Ivy Dick</span><br/>
+              </li>
+              <li>
+                2020-09-02<br/>
+                <span class="seminar-speaker">Carlos Baiz</span><br/>
+              </li>
+              <li>
+                2020-08-26<br/>
+                <span class="seminar-speaker">Tamara Rosenbaum</span><br/>
+              </li>
+              <li>
+                2020-08-19<br/>
+                <span class="seminar-speaker">Hiro Furakawa</span><br/>
+              </li>
+              <li>
+                2020-08-12<br/>
+                <span class="seminar-speaker">Alessio Arccadi</span><br/>
+              </li>
+              <li>
+                2020-08-05<br/>
+                <span class="seminar-speaker">Julia York</span><br/>
+              </li>
+              <li>
+                2020-07-29<br/>
+                <span class="seminar-speaker">Manu Ben Johny</span><br/>
+              </li>
+              <li>
+                2020-07-22<br/>
+                <span class="seminar-speaker">Valeria Vasquez</span><br/>
+              </li>
+              <li>
+                2020-07-15<br/>
+                <span class="seminar-speaker">Reba Howard</span><br/>
+              </li>
+              <li>
+                2020-07-08<br/>
+                <span class="seminar-speaker">Murali Prakriya</span><br/>
+              </li>
+              <li>
+                2020-07-01<br/>
+                <span class="seminar-speaker">Jorg Grandl</span><br/>
+              </li>
+              <li>
+                2020-06-24<br/>
+                <span class="seminar-speaker">Ryan Hibbs</span><br/>
+              </li>
+              <li>
+                2020-06-17<br/>
+                <span class="seminar-speaker">Josh Rosenthal</span><br/>
+              </li>
+              <li>
+                2020-06-03<br/>
+                <span class="seminar-speaker">Rose Dickson</span><br/>
+              </li>
+              <li>
+                2020-05-27<br/>
+                <span class="seminar-speaker">Medha Pathak</span><br/>
+              </li>
+              <li>
+                2020-05-20<br/>
+                <span class="seminar-speaker">Gary Yellen</span><br/>
+              </li>
+              <li>
+                2020-05-13<br/>
+                <span class="seminar-speaker">Toshi Hoshi</span><br/>
+              </li>
+              <li>
+                2020-05-06<br/>
+                <span class="seminar-speaker">Cathy Proenza</span><br/>
+              </li>
+            </ul>
 
-						<ul>
-							<li>
-								2021-06-09<br/>
-								<span class="seminar-speaker">Brendan Lehnert</span><br/>
-								Peripheral mechanoreceptors and the development of body representation in the brain.
-							</li>
-							<li>
-								2021-01-20<br/>
-								<span class="seminar-speaker">Ron Elber</span><br/>
-							</li>
-							<li>
-								2020-12-09<br/>
-								<span class="seminar-speaker">Bill Kobertz</span><br/>
-							</li>
-							<li>
-								2020-11-18<br/>
-								<span class="seminar-speaker">Lucy Forest</span><br/>
-							</li>
-							<li>
-								2020-11-11<br/>
-								<span class="seminar-speaker">Alex Chesler</span><br/>
-							</li>
-							<li>
-								2020-11-04<br/>
-								<span class="seminar-speaker">David White</span><br/>
-							</li>
-							<li>
-								2020-10-28<br/>
-								<span class="seminar-speaker">Vladimir Yarov-Yarovoy</span><br/>
-							</li>
-							<li>
-								2020-10-21<br/>
-								<span class="seminar-speaker">Jennifer Pluznikk</span><br/>
-							</li>
-							<li>
-								2020-10-14<br/>
-								<span class="seminar-speaker">Colleen Clancy</span><br/>
-							</li>
-							<li>
-								2020-10-07<br/>
-								<span class="seminar-speaker">Nick Bellono</span><br/>
-							</li>
-							<li>
-								2020-09-23<br/>
-								<span class="seminar-speaker">Henry Colecraft</span><br/>
-							</li>
-							<li>
-								2020-09-16<br/>
-								<span class="seminar-speaker">Chris Ahern</span><br/>
-							</li>
-							<li>
-								2020-09-09<br/>
-								<span class="seminar-speaker">Ivy Dick</span><br/>
-							</li>
-							<li>
-								2020-09-02<br/>
-								<span class="seminar-speaker">Carlos Baiz</span><br/>
-							</li>
-							<li>
-								2020-08-26<br/>
-								<span class="seminar-speaker">Tamara Rosenbaum</span><br/>
-							</li>
-							<li>
-								2020-08-19<br/>
-								<span class="seminar-speaker">Hiro Furakawa</span><br/>
-							</li>
-							<li>
-								2020-08-12<br/>
-								<span class="seminar-speaker">Alessio Arccadi</span><br/>
-							</li>
-							<li>
-								2020-08-05<br/>
-								<span class="seminar-speaker">Julia York</span><br/>
-							</li>
-							<li>
-								2020-07-29<br/>
-								<span class="seminar-speaker">Manu Ben Johny</span><br/>
-							</li>
-							<li>
-								2020-07-22<br/>
-								<span class="seminar-speaker">Valeria Vasquez</span><br/>
-							</li>
-							<li>
-								2020-07-15<br/>
-								<span class="seminar-speaker">Reba Howard</span><br/>
-							</li>
-							<li>
-								2020-07-08<br/>
-								<span class="seminar-speaker">Murali Prakriya</span><br/>
-							</li>
-							<li>
-								2020-07-01<br/>
-								<span class="seminar-speaker">Jorg Grandl</span><br/>
-							</li>
-							<li>
-								2020-06-24<br/>
-								<span class="seminar-speaker">Ryan Hibbs</span><br/>
-							</li>
-							<li>
-								2020-06-17<br/>
-								<span class="seminar-speaker">Josh Rosenthal</span><br/>
-							</li>
-							<li>
-								2020-06-03<br/>
-								<span class="seminar-speaker">Rose Dickson</span><br/>
-							</li>
-							<li>
-								2020-05-27<br/>
-								<span class="seminar-speaker">Medha Pathak</span><br/>
-							</li>
-							<li>
-								2020-05-20<br/>
-								<span class="seminar-speaker">Gary Yellen</span><br/>
-							</li>
-							<li>
-								2020-05-13<br/>
-								<span class="seminar-speaker">Toshi Hoshi</span><br/>
-							</li>
-							<li>
-								2020-05-06<br/>
-								<span class="seminar-speaker">Cathy Proenza</span><br/>
-							</li>
-						</ul>
+          </section>  <!-- ./#bioelectricity-seminars -->
+        </div>  <!-- ./#sidebar -->
 
-					</div>
+      </div>
+    </div>  <!-- ./#page-content -->
 
-				</div>
-			</div>
-			<!-- right gutter -->
-			<div></div>
-		</div>
+    <footer>
+      <div class="wrapper">
+				<span style="font-size:10pt;">
+					Responsive design by
+					<a href="https://twit96.github.io/">Tyler Wittig</a>
+				</span>
 
-		<!-- //////////////////// FOOTER //////////////////// -->
-		<div id="footer" class="pageColumnLayout">
-			<!-- left gutter -->
-			<div></div>
-			<!-- page column -->
-			<div>
-				<a class="gototop" href="#header">go to top</a>
-			</div>
-			<!-- right gutter -->
-			<div></div>
-		</div>
-	</body>
+        <a class="gototop" href="#page-top">go to top</a>
+      </div>
+    </footer>
+
+  </body>
+
 </html>
