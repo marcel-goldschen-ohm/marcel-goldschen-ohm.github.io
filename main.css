@@ -54,10 +54,18 @@ header {
 }
 header .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
-header h1 { font-weight: normal; }
-header .left-content { margin-bottom: 20px; }
+header .left-content h1 { font-weight: normal; }
+header .left-content span {
+  /* scale font to fit text on small screens */
+  font-size: clamp(8pt, 3vw, 12pt);
+}
+header .right-content {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
 @media (min-width: 700px) {
   header {
     padding: 10px;
@@ -67,8 +75,13 @@ header .left-content { margin-bottom: 20px; }
     justify-content: space-between;
     align-items: center;
   }
-  header .left-content { margin: 0; }
-  header h1 { font-size: 32pt; }
+  header .left-content h1 { font-size: 32pt; }
+  header .left-content span { font-size: 12pt; }
+  header .right-content {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
 }
 
 nav {
