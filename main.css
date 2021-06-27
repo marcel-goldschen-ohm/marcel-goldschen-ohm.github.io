@@ -85,9 +85,9 @@ ul li {
 a#gototop {
   display: none;  /* script on page shows/hides this element */
   position: fixed;
-  bottom: 10px;
+  bottom: 15px;
   /* position right based on max width of page content wrapper */
-  right: max(10px, calc(((100vw - 1050px) / 2)));
+  right: max(15px, calc(15px + ((100vw - 1050px) / 2)));
   background: #cc5500;
   color: white;
   padding: 10px;
