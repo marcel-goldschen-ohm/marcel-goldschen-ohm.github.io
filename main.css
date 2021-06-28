@@ -118,9 +118,6 @@ header .right-content {
   border-bottom: 1px solid gray;
 }
 @media (min-width: 700px) {
-  header {
-    padding: 10px;
-  }
   header .wrapper {
     flex-direction: row;
     justify-content: space-between;
