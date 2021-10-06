@@ -153,6 +153,37 @@ nav a {
   border-radius: 5px;
 }
 
+#highlights {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  margin-top: 10px;
+}
+#highlights img {
+  box-shadow: 0 0 5px 1px black;
+  border-radius: 5px;
+  margin: 10px;
+}
+.highlight {
+  position: relative;
+  width: 200px;
+  margin: 10px;
+}
+.highlight-image {
+  width: 180px;
+}
+.highlight-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.highlight-caption {
+  width: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+}
+
 section {
   background-color: lightgray;
   padding: 20px;
@@ -225,7 +256,10 @@ footer {
   #page-content { padding: 0 10px; }
   #page-content > .wrapper {
     display: flex;
-    justify-content: center
+    justify-content: center;
+  }
+  .highlight-caption {
+    color: white;
   }
   main { width: 70%; }
   #sidebar { width: 30%; }
