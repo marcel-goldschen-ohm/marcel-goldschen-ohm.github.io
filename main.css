@@ -236,6 +236,18 @@ section:nth-of-type(2n),
   font-weight: bold;
 }
 
+#past-seminars {
+  font-size: 10pt;
+}
+
+/* #past-seminars .seminar-speaker {
+  font-weight: normal;
+} */
+
+#past-seminars .seminar-title {
+  font-size: 8pt;
+}
+
 
 /* Footer ------------------------------------------------------------------ */
 footer {
