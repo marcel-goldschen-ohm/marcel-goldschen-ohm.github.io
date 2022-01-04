@@ -236,13 +236,13 @@ section:nth-of-type(2n),
   font-weight: bold;
 }
 
-#past-seminars {
+#bioelectricity-seminars .seminar-title {
   font-size: 10pt;
 }
 
-/* #past-seminars .seminar-speaker {
-  font-weight: normal;
-} */
+#past-seminars {
+  font-size: 10pt;
+}
 
 #past-seminars .seminar-title {
   font-size: 8pt;
