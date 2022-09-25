@@ -23,16 +23,16 @@ html {
   /* Colors */
   --white: #ffffff;
   --black: #000000;
-  --orange-500: #cc5500;
-  --orange-400: #d16e26;
-  --gold-500: gold;
-  --grey-500: gray;
+  --grey-400: #d3d3d3;
+  --grey-500: #808080;
   --grey-600: #595959;
-  --grey-400: lightgray;
+  --gold-500: #ffd700;
+  --orange-400: #d16e26;
+  --orange-500: #cc5500;
   /* Units */
-  --page-width: 1250px;  /* maximum page width */
-  --border-radius: 10px;  /* main border radius value */
+  --page-width: 1250px;    /* maximum page width */
   --layout-spacing: 10px;  /* main margin/padding value */
+  --border-radius: 10px;   /* main border radius value */
 }
 
 /* --------------------------------------------------------- custom defaults */
