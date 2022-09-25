@@ -57,7 +57,7 @@
       <div class="wrapper">
         <div class="left-content">
           <h1>Goldschen-Ohm Lab</h1>
-          <span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
+          <span>Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
         </div>
         <div class="right-content">
           <a href="https://neuroscience.utexas.edu">
@@ -71,7 +71,7 @@
       </div>
     </header>
 
-    <nav>
+    <nav id="top-nav">
       <div class="wrapper">
         <a href="#news">News</a>
         &nbsp;&bull;&nbsp;
@@ -90,58 +90,62 @@
     </nav>
 
     <div id="page-content">
-      <div class="wrapper" id="highlights">
-        <a href="https://doi.org/10.1085/jgp.202213177">
-          <div class="highlight">
-            <img class="highlight-image" src="images/ligand-depletion.png">
-            <img class="highlight-logo" src="images/JGP.png" width="150px">
+      <!-- Highlights -->
+      <div class="wrapper">
+        <section id="highlights" class="custom-scrollbar">
+          <a class="highlight" href="https://doi.org/10.1085/jgp.202213177">
+            <div class="highlight-image-wrap">
+              <img class="highlight-image" src="images/ligand-depletion.png">
+              <img class="highlight-logo" src="images/JGP.png" width="150px">
+            </div>
             <div class="highlight-caption">
               The surprising difficulty of "simple" equilibrium binding measurements
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1101/2021.11.12.468397">
-          <div class="highlight">
-            <img class="highlight-image" src="images/smBEVO-trace.png">
-            <img class="highlight-logo" src="images/bioRxiv.jpg" width="150px">
+          </a>
+          <a class="highlight" href="https://doi.org/10.1101/2021.11.12.468397">
+            <div class="highlight-image-wrap">
+              <img class="highlight-image" src="images/smBEVO-trace.png">
+              <img class="highlight-logo" src="images/bioRxiv.jpg" width="150px">
+            </div>
             <div class="highlight-caption">
               smBEVO: A computer vision approach to single-molecule drift correction
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1038/s41467-021-26816-5">
-          <div class="highlight">
-            <img class="highlight-image" src="images/TAX4-nanovesicle.png">
-            <img class="highlight-logo" src="images/ncomm-logo.jpg" width="140px">
+          </a>
+          <a class="highlight" href="https://doi.org/10.1038/s41467-021-26816-5">
+            <div class="highlight-image-wrap">
+              <img class="highlight-image" src="images/TAX4-nanovesicle.png">
+              <img class="highlight-logo" src="images/ncomm-logo.jpg" width="140px">
+            </div>
             <div class="highlight-caption">
               Single-molecule ligand binding to CNG channels in nanovesicles
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1016/j.bpj.2021.08.045">
-          <div class="highlight">
-            <img class="highlight-image" src="images/svmBoundary.gif">
-            <img class="highlight-logo" src="images/CellPress.jpg" width="80px">
+          </a>
+          <a class="highlight" href="https://doi.org/10.1016/j.bpj.2021.08.045">
+            <div class="highlight-image-wrap">
+              <img class="highlight-image" src="images/svmBoundary.gif">
+              <img class="highlight-logo" src="images/CellPress.jpg" width="80px">
+            </div>
             <div class="highlight-caption">
               AutoDISC: Automated single-molecule idealization
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.7554/eLife.64400">
-          <div class="highlight">
-            <img class="highlight-image" src="images/M23_linker.png">
-            <img class="highlight-logo" src="images/elife-logo-xs.svg" width="120px">
+          </a>
+          <a class="highlight" href="https://doi.org/10.7554/eLife.64400">
+            <div class="highlight-image-wrap">
+              <img class="highlight-image" src="images/M23_linker.png">
+              <img class="highlight-logo" src="images/elife-logo-xs.svg" width="120px">
+            </div>
             <div class="highlight-caption">
               Benzodiazepine drug mechanisms
             </div>
-          </div>
-        </a>
+          </a>
+        </section>
       </div>
-      <div class="wrapper">
+      <!-- Main Content -->
+      <div class="wrapper" id="main-wrapper">
         <main>
           <section id="news">
             <h2>News</h2>
-            2022
+            <h3>2022</h3>
             <ul>
               <li>
                 Marcel Goldschen-Ohm joined the editorial board at Frontiers in Pharmacology.
@@ -172,7 +176,7 @@
               </li>
             </ul>
 
-            2021
+            <h3>2021</h3>
             <ul>
               <li>
                 Khue Tran and Argha Bandyopadhyay develop <a href="https://github.com/marcel-goldschen-ohm/smBEVO">smBEVO</a> which leverages computer vision algorithms for best in class baseline drift correction in single-molecule time series. <a href="https://doi.org/10.1101/2021.11.12.468397">Read about it on bioRxiv</a>
@@ -194,7 +198,7 @@
               </li>
             </ul>
 
-            2020
+            <h3>2020</h3>
             <ul>
               <li>
                 Marcel Goldschen-Ohm joins the board of reviewing editors at eLife.
@@ -210,13 +214,13 @@
               </li>
             </ul>
 
-            2019
+            <h3>2019</h3>
             <ul>
               <li>
                 Rocio Finol-Urdaneta and coworkers show that batrachotoxin props open the pore of prokaryotic voltage-gated sodium channels. <a href="http://dx.doi.org/10.1085/jgp.201812278">Read about it in the Journal of General Physiology</a>
               </li>
             </ul>
-          </section>
+          </section>  <!-- ./#news -->
           <section id="about">
             <h2>About</h2>
             <!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
@@ -312,8 +316,8 @@
                 Pranathi Pilla
               </div>
             </div>
-            <hr/>
-            Past Lab Members
+            <br /><hr/>
+            <h3>Past Lab Members</h3>
             <div class="profile">
               <img src="images/wagner_joseph_nors.jpg" alt="Joseph Wagner">
               <div class="details">
@@ -405,7 +409,7 @@
           <section id="publications">
             <h2>Publications</h2>
 
-            2022
+            <h3>2022</h3>
             <ul>
               <li>
                 <span class="pubauthors">Thomas R. Middendorf and Marcel P. Goldschen-Ohm.</span>
@@ -414,7 +418,7 @@
               </li>
             </ul>
 
-            2021
+            <h3>2021</h3>
             <ul>
               <li>
                 <span class="pubauthors">Khue Tran, Argha Bandyopadhyay, and Marcel P. Goldschen-Ohm.</span>
@@ -443,7 +447,7 @@
               </li> -->
             </ul>
 
-            2020
+            <h3>2020</h3>
             <ul>
               <li>
                 <span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
@@ -452,7 +456,7 @@
               </li>
             </ul>
 
-            2019
+            <h3>2019</h3>
             <ul>
               <li>
                 <span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
@@ -462,8 +466,9 @@
             </ul>
 
             <hr/>
-            Prior Publications<br/><br/>
-            2017
+            <h2>Prior Publications</h2>
+
+            <h3>2017</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
@@ -482,7 +487,7 @@
               </li>
             </ul>
 
-            2016
+            <h3>2016</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, Vadim A. Klenchin, David S. White, John B. Cowgill, Qiang Cui, Randall H. Goldsmith, and Baron Chanda.</span>
@@ -491,7 +496,7 @@
               </li>
             </ul>
 
-            2015
+            <h3>2015</h3>
             <ul>
               <li>
                 <span class="pubauthors">Huan Bao, Marcel Goldschen-Ohm, Pia Jeggle, Baron Chanda, J. Michael Edwardson, and Edwin R. Chapman.</span>
@@ -505,7 +510,7 @@
               </li>
             </ul>
 
-            2014
+            <h3>2014</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, Alexander Haroldson, Mathew V. Jones, and Robert A. Pearce.</span>
@@ -524,7 +529,7 @@
               </li>
             </ul>
 
-            2013
+            <h3>2013</h3>
             <ul>
               <li>
                 <span class="pubauthors">Deborah L. Capes, Marcel P. Goldschen-Ohm, Manoel Arcisio-Miranda, Francisco Bezanilla, and Baron Chanda.</span>
@@ -538,7 +543,7 @@
               </li>
             </ul>
 
-            2011
+            <h3>2011</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner and Mathew V. Jones</span>
@@ -547,7 +552,7 @@
               </li>
             </ul>
 
-            2010
+            <h3>2010</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner, Steven Petrou and Mathew V. Jones</span>
@@ -557,7 +562,7 @@
             </ul>
 
             <!--
-            2005
+            <h3>2005</h3>
             <ul>
               <li>
                 <span class="pubauthors">David A. Wagner, Marcel P. Goldschen-Ohm, Tim G. Hales and Mathew V. Jones</span>
@@ -566,7 +571,7 @@
               </li>
             </ul>
 
-            2004
+            <h3>2004</h3>
             <ul>
               <li>
                 <span class="pubauthors">Eric Bach, Susan Coppersmith, Marcel Paz Goldschen, Robert Joynt and John Watrous</span>
@@ -575,7 +580,7 @@
               </li>
             </ul>
 
-            1997
+            <h3>1997</h3>
             <ul>
               <li>
                 <span class="pubauthors">M. Braunstein, R. Comstock, P. Hoffman, M. Womack, F. Deglman, D. Pinnick, G. Aaker, M. Goldschen, A. Jacobson, J. Zilka, D. Faith, S. Moore, J. Ricotta, A Weist and C. Modi</span>
@@ -584,7 +589,6 @@
               </li>
             </ul>
             -->
-
           </section>  <!-- ./#publications -->
         </main>
         <!-- right sidebar -->
@@ -593,9 +597,10 @@
             <h2>Bioelectricity Seminar Series</h2>
 
             <a href="https://calendar.google.com/calendar/u/0?cid=Y2RoOWF2dnQwc3Q4dms3Zjh1bzFkNmNlNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Shared Calendar</a>
+            <br /><br />
 
             <hr />
-            Upcoming Seminars
+            <h3>Upcoming Seminars</h3>
             <hr />
 
             <ul>
@@ -610,7 +615,7 @@
             </ul>
 
             <hr/>
-            Past Seminars
+            <h3>Past Seminars</h3>
             <hr />
 
             <div id="past-seminars">

@@ -3,6 +3,9 @@
 Table of Contents
 
 - Config
+  - root variables
+  - custom defaults
+  - custom classes
 - Background
 - Go to Top Button
 - Top Bar Content
@@ -13,45 +16,84 @@ Table of Contents
 
 */
 
+
 /* Config ------------------------------------------------------------------ */
-* { box-sizing: border-box; }
+/* ---------------------------------------------------------- root variables */
+html {
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --orange-500: #cc5500;
+  --orange-400: #d16e26;
+  --gold-500: gold;
+  --grey-500: gray;
+  --grey-600: #595959;
+  --grey-400: lightgray;
+  /* Units */
+  --page-width: 1250px;  /* maximum page width */
+  --border-radius: 10px;  /* main border radius value */
+  --layout-spacing: 10px;  /* main margin/padding value */
+}
+
+/* --------------------------------------------------------- custom defaults */
+/* unset defaults */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* natural box layout model, allowing overrides */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
 body {
-  margin: 0;
   font-family: Arial;
-  background: white;  /* changed to gray in large screen breakpoint */
+  background: var(--white);
 }
 
-.wrapper {
-  max-width: 1050px;
-  margin: auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  /* remove defaults */
-  margin: 0;
-}
 h2 {
-  font-size: 16pt;
   font-weight: normal;
   display: block;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: var(--layout-spacing);
 }
 h3 { font-size: 12pt; }
 
 a {
   text-decoration: none;
-  color: #cc5500;
+  color: var(--orange-500);
 }
 a:hover { text-decoration: underline; }
 
 ul {
-  /* override default */
-  padding-left: 20px;
+  /* align bullet points */
+  padding-left: calc(var(--layout-spacing) * 2);
 }
 ul li {
-  margin-bottom: 10px;
+  margin-bottom: var(--layout-spacing);
+}
+
+/* ---------------------------------------------------------- custom classes */
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 15px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-500);
+  border-radius: 15px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-400);
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--grey-400);
+  border-radius: var(--border-radius);
+  margin: 0 calc(var(--layout-spacing) * 3);
+}
+
+/* Content Wrapper */
+.wrapper {
+  max-width: var(--page-width);
+  margin: auto;
 }
 
 
@@ -71,7 +113,7 @@ ul li {
   position: fixed;
   opacity: 0.03;
   border-radius: 2vmin;
-  background: black;
+  background: var(--black);
 }
 
 /* debugging - make page content transparent to view bg */
@@ -84,34 +126,39 @@ a#gototop {
   position: fixed;
   bottom: 15px;
   /* position right based on max width of page content wrapper */
-  right: max(15px, calc(15px + ((100vw - 1050px) / 2)));
-  background: #cc5500;
-  color: white;
+  right: max(15px, calc(15px + ((100vw - var(--page-width)) / 2)));
+  background: var(--orange-500);
+  color: var(--white);
   padding: 10px;
-  box-shadow: 0 0 5px 1px black;
-  border-radius: 5px;
+  box-shadow: 0 0 5px 1px var(--black);
+  border-radius: var(--border-radius);
 }
+
+a#gototop:hover { background: var(--orange-400); }
 
 
 /* Top Bar Content --------------------------------------------------------- */
 header {
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   padding: 20px;
 }
 header .wrapper {
   display: flex;
   flex-direction: column-reverse;
 }
-header .left-content h1 { font-weight: normal; }
+header .left-content h1 {
+  font-weight: normal;
+}
 header .left-content span {
   /* scale font to fit text on small screens */
   font-size: clamp(8pt, 3vw, 12pt);
+  color: var(--gold-500);
 }
 header .right-content {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid gray;
+  margin-bottom: var(--layout-spacing);
+  padding-bottom: var(--layout-spacing);
+  border-bottom: 1px solid var(--grey-500);
 }
 @media (min-width: 700px) {
   header .wrapper {
@@ -128,18 +175,18 @@ header .right-content {
   }
 }
 
-nav {
-  background-color: #cc5500;
-  color: white;
-  padding: 10px 20px;
-  box-shadow: 0 0 5px 1px black;
-  /* box shadow bugfix - render above about section */
+nav#top-nav {
+  line-height: 1.5em;
+  background: var(--orange-500);
+  box-shadow: 0 0 5px 1px var(--black);
+  color: var(--white);
+  padding: var(--layout-spacing) calc(var(--layout-spacing) * 2);
+  /* box shadow bugfix - render shadow above next section */
   position: relative;
   z-index: 1;
 }
-nav a {
-  text-decoration: none;
-  color: white;
+nav#top-nav a {
+  color: var(--white);
   display: inline-block;
 }
 
@@ -149,28 +196,62 @@ nav a {
   line-height: 125%;
 }
 #page-content img {
-  box-shadow: 0 0 5px 1px gray;
-  border-radius: 5px;
+  box-shadow: 0 0 5px 1px var(--grey-500);
+  border-radius: var(--border-radius);
 }
 
+section {
+  background-color: transparent;
+  padding: 20px;
+}
+/* small screen background variation - every other section is white */
+section:nth-of-type(2n),
+#sidebar section:nth-of-type(2n) {
+  background-color: var(--grey-400);
+}
+
+section > :not(:last-child) {
+  margin-bottom: var(--layout-spacing);
+}
+
+
+/* Page Sections ----------------------------------------------------------- */
 #highlights {
   display: flex;
-  flex-flow: row wrap;
-  padding: 10px;
-  margin-top: 10px;
+  align-items: stretch;
+  overflow-x: auto;
+  background: var(--grey-600);
 }
-#highlights img {
-  box-shadow: 0 0 5px 1px black;
-  border-radius: 5px;
-  margin: 10px;
+
+/* override page layout */
+section#highlights > :not(:last-child) {
+  margin-bottom: 0;
 }
+
 .highlight {
+  width: 220px;
+  border-radius: var(--border-radius);
+  background: var(--grey-400);
+  box-shadow: 0 0 5px 1px var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-spacing);
+  padding: var(--layout-spacing);
+  transition: 0.15s transform ease;
+  transform: scale(0.95);
+}
+.highlight:hover { transform: scale(1); }
+.highlight-image-wrap {
   position: relative;
-  width: 200px;
-  margin: 10px;
+  width: calc(220px - (var(--layout-spacing) * 2));
+  /* force highlight-image to fill entire container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .highlight-image {
-  width: 180px;
+  width: 100%;
 }
 .highlight-logo {
   position: absolute;
@@ -178,24 +259,9 @@ nav a {
   left: 0;
 }
 .highlight-caption {
-  width: 200px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: black;
+  color: var(--black);
 }
 
-section {
-  background-color: lightgray;
-  padding: 20px;
-}
-/* small screen background variation - every other section is white */
-section:nth-of-type(2n),
-#sidebar section:nth-of-type(2n) {
-  background-color: transparent;
-}
-
-
-/* Page Sections ----------------------------------------------------------- */
 #about div {
   display: flex;
   flex-direction: column;
@@ -251,9 +317,9 @@ section:nth-of-type(2n),
 
 /* Footer ------------------------------------------------------------------ */
 footer {
-  background-color: black;
-  box-shadow: 0 0 5px 1px black;
-  color: white;
+  background-color: var(--black);
+  box-shadow: 0 0 5px 1px var(--black);
+  color: var(--white);
   padding: 10px 20px;
 }
 
@@ -261,28 +327,30 @@ footer {
 /* Large Screen Breakpoint ------------------------------------------------- */
 @media (min-width: 900px) {
   /* update background */
-  body { background: gray; }
+  body { background: var(--grey-500); }
   #bg span { opacity: 0.05; }
-  #bg span:nth-of-type(2n-1) { background: lightgray; }
+  #bg span:nth-of-type(2n-1) { background: var(--grey-400); }
   /* update page layout */
-  #page-content { padding: 0 10px; }
-  #page-content > .wrapper {
+  #page-content { padding: 0 var(--layout-spacing); }
+  #main-wrapper {
     display: flex;
     justify-content: center;
   }
-  .highlight-caption {
-    color: white;
-  }
+  /* add extra space above highlights section */
+  #highlights { margin-top: calc(var(--layout-spacing) * 2); }
+  /* set page and sidebar widths */
   main { width: 70%; }
   #sidebar { width: 30%; }
+  /* adjust page sections */
   section {
-    margin: 10px 0;
-    box-shadow: 0 0 5px 1px black;
-    border-radius: 10px;
+    margin: var(--layout-spacing) 0;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 5px 1px var(--black);
   }
-  section:nth-of-type(2n),
+  section:nth-of-type(2n-1),
   #sidebar section:nth-of-type(2n-1) {
-    background-color: lightgray;
+    background: var(--grey-400);
   }
-  #sidebar section { margin-left: 10px; }
+  /* add extra space between sidebar and main page content */
+  #sidebar section { margin-left: calc(var(--layout-spacing) * 2); }
 }
