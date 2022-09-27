@@ -35,12 +35,25 @@ for (i=0; i<30; i++) {
 
 
 // Go to Top Button -----------------------------------------------------------
-// toggle gototop visibility based on page scroll position
 var gototop = document.getElementById("gototop");
-window.onscroll = function() {
+
+// debounce functionality (only trigger once per scroll)
+const debounce = (fn, delay) => {
+  let timerId;
+  return (...args) => {
+    clearTimeout(timerId);
+    timerId = setTimeout(fn, delay, [...args]);
+  };
+};
+
+// debounced change handler
+const debouncedChangeHandler = debounce(() => {
   if (
     (document.body.scrollTop > 250) ||
     (document.documentElement.scrollTop > 250)
   ) { gototop.style.display = "block"; }
   else { gototop.style.display = "none"; }
-};
+}, 250);  // fires after scroll event has stopped for at least 250ms
+
+// toggle gototop visibility based on page scroll position
+window.addEventListener("scroll", debouncedChangeHandler);
