@@ -53,7 +53,7 @@ const debouncedChangeHandler = debounce(() => {
     (document.documentElement.scrollTop > 250)
   ) { gototop.style.display = "block"; }
   else { gototop.style.display = "none"; }
-}, 250);  // fires after scroll event has stopped for at least 250ms
+}, 100);  // fires after scroll event has stopped for at least 100ms
 
 // toggle gototop visibility based on page scroll position
 window.addEventListener("scroll", debouncedChangeHandler);
