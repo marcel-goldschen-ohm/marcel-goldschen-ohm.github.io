@@ -264,6 +264,8 @@ section > :not(:last-child) {
   opacity: 0.75;
 }
 #highlights .highlight-image {
+  border-radius: 0;
+  box-shadow: none;
   max-height: auto;
   width: 350px;
   margin: auto;
@@ -276,7 +278,7 @@ section > :not(:last-child) {
   position: absolute;
   top: var(--layout-spacing); left: var(--layout-spacing);
   height: 50px; width: auto;
-  opacity: 0.75;
+  opacity: 0.65;
   transition: var(--transition-duration) opacity var(--transition-timing-function);
 }
 #highlights .highlight:hover .highlight-logo {
