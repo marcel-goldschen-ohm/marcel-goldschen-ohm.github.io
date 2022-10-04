@@ -201,6 +201,8 @@ nav#top-nav {
 #top-nav hr.hidden,
 #top-nav-links.hidden { display: none; }
 
+#top-nav-links li { padding: calc(var(--layout-spacing) / 2) 0; }
+
 #top-nav a {
   color: var(--white);
   display: inline-block;
@@ -430,7 +432,10 @@ footer {
     align-items: center;
   }
   /* unset top-nav-links mobile-only styles */
-  #top-nav-links li { margin-bottom: 0; }
+  #top-nav-links li {
+    margin-bottom: 0;
+    padding: 0;
+  }
   #top-nav-links li:first-child { list-style-type: none; }
   #top-nav-links a { font-size: 1em; }
 
