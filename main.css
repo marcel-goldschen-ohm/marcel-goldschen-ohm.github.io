@@ -195,7 +195,10 @@ nav#top-nav {
   fill: var(--white);
 }
 
-#top-nav hr { border: 1px solid var(--white); }
+#top-nav hr {
+  border: 1px solid var(--white);
+  background: var(--white);
+}
 
 #top-nav-menu-btn svg.hidden,
 #top-nav hr.hidden,
