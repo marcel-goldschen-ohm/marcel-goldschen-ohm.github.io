@@ -275,9 +275,10 @@ section > :not(:last-child) {
   transform: scale(1.1);
 }
 #highlights .highlight-logo {
+  border-radius: 5px;
   position: absolute;
   top: var(--layout-spacing); left: var(--layout-spacing);
-  height: 50px; width: auto;
+  height: 55px; width: auto;
   opacity: 0.65;
   transition: var(--transition-duration) opacity var(--transition-timing-function);
 }
@@ -326,7 +327,8 @@ section > :not(:last-child) {
 .control.right { right: var(--layout-spacing); }
 
 .control svg {
-  fill:var(--white)
+  fill: var(--white);
+
 }
 
 
