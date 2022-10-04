@@ -4,6 +4,7 @@ Table of Contents
 
 - Background Pattern
 - Go to Top Button
+- Highlights Carousel
 
 */
 
@@ -117,6 +118,7 @@ function decrementIndeces() {
   next = (curr + 1) % num_cards;
 }
 
+
 // Visual Counter
 let counter = document.getElementById("highlights-counter");
 
@@ -129,7 +131,7 @@ updateCounter();  // first iteration
 
 // Cycle Functionality
 function mainTimerFunction() {
-  if (hovering) return;  // pause on mouse hover
+  if (hovering) return;  // paused on mouse hover
   // perform required changes
   incrementIndeces();
   updateCounter();
