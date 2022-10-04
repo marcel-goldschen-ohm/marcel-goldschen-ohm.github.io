@@ -164,5 +164,25 @@ function nextBtn() {
   resetTimer();
 }
 
-left_btn.onclick = () => backBtn();
-right_btn.onclick = () => nextBtn();
+// prevent button spamming - use throttle
+const throttle = (func, delay) => {
+  let inProgress = false;
+  return (...args) => {
+    if (inProgress) {
+      return;
+    }
+    inProgress = true;
+    func(...args);
+    setTimeout(() => {
+      inProgress = false;
+    }, delay);
+  }
+};
+
+// buttons only work once every 750ms
+left_btn.onclick = throttle(() => {
+  backBtn();
+}, 750);
+right_btn.onclick = throttle(() => {
+  nextBtn();
+}, 750);
