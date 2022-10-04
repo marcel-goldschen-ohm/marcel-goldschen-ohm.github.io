@@ -4,6 +4,7 @@ Table of Contents
 
 - Background Pattern
 - Go to Top Button
+- Top Nav Menu Button (Mobile Only)
 - Highlights Carousel
 
 */
@@ -45,6 +46,33 @@ window.onscroll = function() {
   else { gototop.style.display = "none"; }
 }
 
+
+// Top Nav Menu Button (Mobile Only) ------------------------------------------
+let top_nav = document.getElementById("top-nav");
+let menu_btn = document.getElementById("top-nav-menu-btn");
+let open_svg = document.getElementById("menu-btn-open");
+let close_svg = document.getElementById("menu-btn-close");
+let menu_txt = menu_btn.querySelector("span");
+let decorative_line = top_nav.querySelector("hr");
+let top_nav_links = document.getElementById("top-nav-links");
+
+// set initial nav state
+close_svg.classList.add("hidden");
+decorative_line.classList.add("hidden");
+top_nav_links.classList.add("hidden");
+
+// menu button toggles nav
+menu_btn.onclick = () => {
+  // swap SVG's
+  open_svg.classList.toggle("hidden");
+  close_svg.classList.toggle("hidden");
+  // toggle menu button text
+  menu_txt.innerHTML==="Menu" ? menu_txt.innerHTML="Close" : menu_txt.innerHTML="Menu";
+  // toggle decorative line
+  decorative_line.classList.toggle("hidden");
+  // toggle nav links
+  top_nav_links.classList.toggle("hidden");
+}
 
 // Highlights Carousel --------------------------------------------------------
 let highlights_section = document.getElementById("highlights");

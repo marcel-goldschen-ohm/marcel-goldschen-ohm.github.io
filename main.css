@@ -171,9 +171,40 @@ nav#top-nav {
   position: relative;
   z-index: 1;
 }
-nav#top-nav a {
+
+#top-nav .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--layout-spacing);
+}
+
+#top-nav-menu-btn {
+  --size: 36px;
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--layout-spacing);
+  font-size: calc(var(--size) * 0.66);
+  color: var(--white);
+}
+#top-nav-menu-btn svg {
+  width: var(--size); height: var(--size);
+  fill: var(--white);
+}
+
+#top-nav hr { border: 1px solid var(--white); }
+
+#top-nav-menu-btn svg.hidden,
+#top-nav hr.hidden,
+#top-nav-links.hidden { display: none; }
+
+#top-nav a {
   color: var(--white);
   display: inline-block;
+  font-size: 16pt;
 }
 
 
@@ -380,16 +411,35 @@ footer {
 
 /* Large Screen Breakpoint ------------------------------------------------- */
 @media (min-width: 900px) {
-  /* update background */
+
+  /* Update Background */
   body { background: var(--grey-500); }
   #bg span { opacity: 0.05; }
   #bg span:nth-of-type(2n-1) { background: var(--grey-400); }
-  /* update page layout */
+
+  /* Update Top Nav */
+  /* hide menu button and decorative line */
+  #top-nav-menu-btn,
+  #top-nav hr { display: none; }
+  /* top-nav-links always display horizontally */
+  #top-nav-links,
+  #top-nav-links.hidden {
+    padding-left: 0;
+    display: flex;
+    gap: 1.75em;
+    align-items: center;
+  }
+  /* unset top-nav-links mobile-only styles */
+  #top-nav-links li { margin-bottom: 0; }
+  #top-nav-links li:first-child { list-style-type: none; }
+  #top-nav-links a { font-size: 1em; }
+
+  /* Update Page Layout */
   #page-content {
     padding: var(--layout-spacing) calc(var(--layout-spacing) * 2);
   }
+  /* use grid to reorder highlights/main/sidebar sections */
   #page-wrapper {
-    /* use grid to reorder highlights/main/sidebar */
     display: grid;
     grid-gap: calc(var(--layout-spacing) * 2);
     grid-template-columns: 1fr 1fr var(--highlights-size);
@@ -403,6 +453,7 @@ footer {
   #highlights {
     grid-area: highlights;
     grid-column: 3;
+    /* unset mobile height */
     height: var(--highlights-size);
   }
   main {
@@ -416,11 +467,13 @@ footer {
     grid-row: 2 / 4;
   }
 
-  /* adjust page sections */
+  /* Adjust Page Sections */
+  /* make sections into "bubbles" */
   section {
     margin: var(--layout-spacing) 0;
     border-radius: var(--border-radius);
   }
+  /* unset mobile alternating background colors */
   section:nth-of-type(2n-1),
   #sidebar section:nth-of-type(2n-1) {
     background: var(--grey-400);
