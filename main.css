@@ -338,10 +338,10 @@ section > :not(:last-child) {
   position: absolute;
   bottom: var(--layout-spacing);
   margin: 0;
-  transform: scale(0.9);
+  transform: scale(1);
   transition: 0.25s transform ease;
 }
-#highlights .control:hover { transform: scale(1); }
+#highlights .control:hover { transform: scale(1.1); }
 .control.left { left: var(--layout-spacing); }
 .control.right { right: var(--layout-spacing); }
 
