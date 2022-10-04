@@ -31,7 +31,7 @@ html {
   --orange-400: #d16e26;
   --orange-500: #cc5500;
   /* Units */
-  --page-width: 1050px;      /* maximum page width */
+  --page-width: 1100px;      /* maximum page width */
   --layout-spacing: 10px;    /* main margin/padding value */
   --border-radius: 10px;     /* main border radius value */
   --highlights-size: 350px;  /* width/height of highlights card */
