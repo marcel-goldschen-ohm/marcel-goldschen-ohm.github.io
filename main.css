@@ -431,9 +431,9 @@ section > :not(:last-child) {
   aspect-ratio: 1 / 1;
   display: inline-flex;
 }
-#upcoming-seminars .seminar-date::before { content: url(/images/icon-calendar.svg); }
-#upcoming-seminars .seminar-speaker::before { content: url(/images/icon-person.svg); }
-#upcoming-seminars .seminar-title::before { content: url(/images/icon-info.svg); }
+#upcoming-seminars .seminar-date::before { content: url(./images/icon-calendar.svg); }
+#upcoming-seminars .seminar-speaker::before { content: url(./images/icon-person.svg); }
+#upcoming-seminars .seminar-title::before { content: url(./images/icon-info.svg); }
 /* increase font size */
 #upcoming-seminars .seminar-title { font-size: 10pt; }
 
