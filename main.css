@@ -180,7 +180,7 @@ nav#top-nav {
 }
 
 #top-nav-menu-btn {
-  --size: 36px;
+  --size: 32px;
   cursor: pointer;
   background: 0;
   border: 0;
@@ -209,7 +209,7 @@ nav#top-nav {
 #top-nav a {
   color: var(--white);
   display: inline-block;
-  font-size: 16pt;
+  font-size: 14pt;
 }
 
 
