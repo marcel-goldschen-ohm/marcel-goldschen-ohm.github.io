@@ -299,7 +299,8 @@ section > :not(:last-child) {
   border-radius: 5px;
   box-shadow: none;
   position: absolute;
-  top: var(--layout-spacing); left: var(--layout-spacing);
+  top: calc(var(--layout-spacing) * 2);
+  left: calc(var(--layout-spacing) * 2);
   height: 55px; width: auto;
   opacity: 0.65;
   transition: var(--transition-duration) opacity var(--transition-timing-function);
@@ -327,7 +328,8 @@ section > :not(:last-child) {
 
 #highlights #highlights-counter {
   position: absolute;
-  top: var(--layout-spacing); right: var(--layout-spacing);
+  top: calc(var(--layout-spacing) * 2);
+  right: calc(var(--layout-spacing) * 2);
   font-weight: bold;
   color: var(--white);
 }
@@ -337,14 +339,14 @@ section > :not(:last-child) {
   background: 0;
   border: 0;
   position: absolute;
-  bottom: var(--layout-spacing);
+  bottom: calc(var(--layout-spacing) * 2);
   margin: 0;
   transform: scale(1);
   transition: 0.25s transform ease;
 }
 #highlights .control:hover { transform: scale(1.1); }
-.control.left { left: var(--layout-spacing); }
-.control.right { right: var(--layout-spacing); }
+.control.left { left: calc(var(--layout-spacing) * 2); }
+.control.right { right: calc(var(--layout-spacing) * 2); }
 
 .control svg {
   width: 48px; height: 48px;
