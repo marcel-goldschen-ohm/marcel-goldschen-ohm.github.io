@@ -75,126 +75,7 @@ menu_btn.onclick = () => {
 }
 
 // Highlights Carousel --------------------------------------------------------
-let highlights_section = document.getElementById("highlights");
-let highlights = highlights_section.getElementsByClassName("highlight");
-let num_cards = highlights.length;
-
-// Pause Animation on Mouse Hover
-let hovering = false;
-highlights_section.onmouseover = function() {
-  hovering = true;
-}
-highlights_section.onmouseout = function() {
-  hovering = false;
-  resetTimer();
-}
-
-// Automatically Cycle Between Cards
-let curr = 0;
-let prev = (curr - 1 + num_cards) % num_cards;
-let next = (curr + 1) % num_cards;
-
-// configure the required initial card classes
-function configClasses() {
-  for (let i=0; i<num_cards; i++) {
-    highlights[i].classList.add('no-anim');
-    highlights[i].classList.add('shift-left');
-  }
-
-  highlights[curr].classList.remove('shift-left');
-  highlights[curr].classList.remove('no-anim');
-
-  highlights[next].classList.add('no-anim');
-  highlights[next].classList.add('shift-right');
-}
-configClasses();
-
-// update the classes for the appropriate cards at each iteration
-function incrementClasses() {
-  highlights[prev].classList.add('shift-left');
-
-  highlights[curr].classList.remove('no-anim');
-  highlights[curr].classList.remove('shift-right');
-
-  highlights[next].classList.add('no-anim');
-  highlights[next].classList.remove('shift-left');
-  highlights[next].classList.add('shift-right');
-}
-incrementClasses();  // first iteration
-
-function decrementClasses() {
-  highlights[prev].classList.add('no-anim');
-  highlights[prev].classList.remove('shift-right');
-  highlights[prev].classList.add('shift-left');
-
-  highlights[curr].classList.remove('no-anim');
-  highlights[curr].classList.remove('shift-left');
-
-  highlights[next].classList.add('shift-right');
-}
-
-// keep track of which cards to update at each iteration
-function incrementIndeces() {
-  curr = (curr + 1) % num_cards;
-  prev = (curr - 1 + num_cards) % num_cards;
-  next = (curr + 1) % num_cards;
-}
-
-function decrementIndeces() {
-  curr = (curr - 1 + num_cards) % num_cards;
-  prev = (curr - 1 + num_cards) % num_cards;
-  next = (curr + 1) % num_cards;
-}
-
-
-// Visual Counter
-let counter = document.getElementById("highlights-counter");
-
-// update counter at each iteration
-function updateCounter() {
-  counter.innerHTML = curr+1 + ' / ' + num_cards;
-}
-updateCounter();  // first iteration
-
-
-// Cycle Functionality
-function mainTimerFunction() {
-  if (hovering) return;  // paused on mouse hover
-  // perform required changes
-  incrementIndeces();
-  updateCounter();
-  incrementClasses();
-}
-
-// reset timer when user stop hovering
-function resetTimer() {
-  clearInterval(mainTimer);
-  mainTimer = setInterval(mainTimerFunction, 5000);
-}
-
-// initial timer
-let mainTimer = setInterval(mainTimerFunction, 5000);
-
-
-// Button Controls
-let left_btn = document.getElementById("highlights-ctrl-left");
-let right_btn = document.getElementById("highlights-ctrl-right");
-
-function backBtn() {
-  decrementIndeces();
-  updateCounter();
-  decrementClasses();
-  resetTimer();
-}
-
-function nextBtn() {
-  incrementIndeces();
-  updateCounter();
-  incrementClasses();
-  resetTimer();
-}
-
-// prevent button spamming - use throttle
+// to prevent button spamming - use throttle
 const throttle = (func, delay) => {
   let inProgress = false;
   return (...args) => {
@@ -209,10 +90,246 @@ const throttle = (func, delay) => {
   }
 };
 
-// buttons only work once every 750ms
-left_btn.onclick = throttle(() => {
-  backBtn();
-}, 750);
-right_btn.onclick = throttle(() => {
-  nextBtn();
-}, 750);
+class HighlightsCarousel {
+  constructor() {
+    this.section;    // #highlights
+    this.cards;      // #highlights .highlight
+    this.counter;    // #highlights-counter
+    this.left_btn;   // #highlights-ctrl-left
+    this.right_btn;  // highlights-ctrl-right
+
+    this.prev;      // previous highlight card
+    this.curr = 0;  // current highlight card
+    this.next;      // next highlight card
+
+    this.timer;              // timer object
+    this.timerDelay = 5000;  // milliseconds
+
+    // hook to required page components or return
+    if (!this._hookToHTML()) return;
+
+    // if less than two cards, disable carousel and return
+    this.num_cards = this.cards.length;
+    if (this.num_cards < 2) {
+      this._disableCarousel();
+      return;
+    }
+
+    // assign button functionality
+    this.left_btn.onclick = throttle(() => {
+      this._backBtn();
+    }, 750);
+    this.right_btn.onclick = throttle(() => {
+      this._nextBtn();
+    }, 750);
+
+    // configure counter
+    this._updateCounter(this.curr+1);
+
+    // pause timer on mouse hover
+    this.section.onmouseover = () => this._stopTimer();
+    this.section.onmouseout = () => this._startTimer();
+
+    // configure carousel and begin cycle animation
+    this._configCarousel();
+    this._startTimer();
+  }
+
+  /**
+  * Function to try to hook to all of the required components for the carousel.
+  * Logs custom errors to the console if any are not found. These components are
+  * explicitly named within this function instead of being passed into the class
+  * constructor, meaning the class can only be used once per page.
+  */
+  _hookToHTML() {
+    try {
+      // section
+      this.section = document.getElementById("highlights");
+      if (!this.section) throw new Error("Highlights section not found.");
+      // cards
+      this.cards = this.section.getElementsByClassName("highlight");
+      // counter
+      this.counter = document.getElementById("highlights-counter");
+      if (!this.counter) {
+        throw new Error("Highlights section has no counter component.");
+      }
+      // left button
+      this.left_btn = document.getElementById("highlights-ctrl-left");
+      if (!this.left_btn) {
+        throw new Error("Highlights section has no left button component.");
+      }
+      // right button
+      this.right_btn = document.getElementById("highlights-ctrl-right");
+      if (!this.right_btn) {
+        throw new Error("Highlights section has no right button component.");
+      }
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+    return true;
+  }
+
+  /**
+  * Function to hide the carousel's counter, left button, and right button.
+  * Called in the class constructor if the carousel has less than 2 cards,
+  * since the controls are redundant until there are at least 2 cards.
+  */
+  _disableCarousel() {
+    this.counter.style.display = "None";
+    this.left_btn.style.display = "None";
+    this.right_btn.style.display = "None";
+  }
+
+  /**
+  * Function to configure the carousel after successfully hooking to the HTML
+  * components and confirming that there are at least 2 cards. Sets the initial
+  * state of the cards and their class names for the scrolling animation.
+  */
+  _configCarousel() {
+    // configure prev and next
+    this.prev = (this.curr - 1 + this.num_cards) % this.num_cards;
+    this.next = (this.curr + 1) % this.num_cards;
+
+    // configure card classes
+    if (this.num_cards === 2) {
+      this.cards[this.next].classList.add('shift-right');
+    } else if (this.num_cards > 2) {
+      // all cards
+      for (let i=0; i<this.num_cards; i++) {
+        this.cards[i].classList.add('no-anim');
+        this.cards[i].classList.add('shift-left');
+      }
+      // curr card
+      this.cards[this.curr].classList.remove('shift-left');
+      this.cards[this.curr].classList.remove('no-anim');
+      // next card
+      this.cards[this.next].classList.add('no-anim');
+      this.cards[this.next].classList.add('shift-right');
+      // first iteration
+      this._incrementClasses();
+    }
+  }
+
+  /**
+  * Functions used to stop and start the timer.
+  */
+  _stopTimer() {
+    clearInterval(this.timer);
+  }
+  _startTimer() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => this._timerFunction(), this.timerDelay);
+  }
+
+  /**
+  * Callback function for the carousel's timer. Directs the action to one of two
+  * functions, depending on whether the carousel has 2 or 3+ cards.
+  */
+  _timerFunction() {
+    // special case - two cards
+    if (this.num_cards === 2) {
+      this._handleTwo();
+    // normal case - 3+ cards
+    } else {
+      this._handleMore();
+    }
+  }
+
+  /**
+  * Functions used to direct the actions required to display the current card.
+  * _handleTwo() is only called if there are exactly two cards, whereas
+  * _handleMore() is called if there are three or more cards.
+  */
+  _handleTwo() {
+    // toggle displayed card
+    this.cards[this.curr].classList.toggle("shift-left");
+    this.cards[this.next].classList.toggle("shift-right");
+    // update counter
+    let twoCurr = (this.cards[this.next].classList.contains('shift-right')) ? 0 : 1;
+    this._updateCounter(twoCurr+1);
+  }
+  _handleMore(forwards=true) {
+    if (forwards) {
+      this._incrementIndeces();
+      this._incrementClasses();
+      this._updateCounter(this.curr+1);
+    } else {
+      this._decrementIndeces();
+      this._decrementClasses();
+      this._updateCounter(this.curr+1);
+    }
+  }
+
+  /**
+  * Functions used to increase/decrease the prev/curr/next cards' indeces for
+  * the carousel animation. Only used if the carousel has three or more cards.
+  */
+  _incrementIndeces() {
+    this.curr = (this.curr + 1) % this.num_cards;
+    this.prev = (this.curr - 1 + this.num_cards) % this.num_cards;
+    this.next = (this.curr + 1) % this.num_cards;
+  }
+  _decrementIndeces() {
+    this.curr = (this.curr - 1 + this.num_cards) % this.num_cards;
+    this.prev = (this.curr - 1 + this.num_cards) % this.num_cards;
+    this.next = (this.curr + 1) % this.num_cards;
+  }
+
+  /**
+  * Functions used to update the classes required to display the current card in
+  * the carousel animation. Only used if the carousel has three or more cards.
+  */
+  _incrementClasses() {
+    // prev
+    this.cards[this.prev].classList.add('shift-left');
+    // curr
+    this.cards[this.curr].classList.remove('no-anim');
+    this.cards[this.curr].classList.remove('shift-right');
+    // next
+    this.cards[this.next].classList.add('no-anim');
+    this.cards[this.next].classList.remove('shift-left');
+    this.cards[this.next].classList.add('shift-right');
+  }
+  _decrementClasses() {
+    // prev
+    this.cards[this.prev].classList.add('no-anim');
+    this.cards[this.prev].classList.remove('shift-right');
+    this.cards[this.prev].classList.add('shift-left');
+    // curr
+    this.cards[this.curr].classList.remove('no-anim');
+    this.cards[this.curr].classList.remove('shift-left');
+    // next
+    this.cards[this.next].classList.add('shift-right');
+  }
+
+  /**
+  * Function used to update the text within the counter element.
+  */
+  _updateCounter(val) {
+    this.counter.innerHTML = val + ' / ' + this.num_cards;
+  }
+
+  /**
+  * Functions used to add functionality to the carousel's back and next buttons.
+  */
+  _backBtn() {
+    if (this.num_cards === 2) {
+      this._handleTwo();
+    } else {
+      this._handleMore(false);
+    }
+    this._startTimer();
+  }
+  _nextBtn() {
+    if (this.num_cards === 2) {
+      this._handleTwo();
+    } else {
+      this._handleMore(true);
+    }
+    this._startTimer();
+  }
+}
+
+// add carousel object to page
+new HighlightsCarousel();

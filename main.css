@@ -229,7 +229,7 @@ section {
 /* small screen background variation - every other section is white */
 section:nth-of-type(2n),
 #sidebar section:nth-of-type(2n) {
-  background-color: var(--grey-400);
+  background: var(--grey-400);
 }
 
 section > :not(:last-child) {
@@ -242,6 +242,7 @@ section > :not(:last-child) {
   position: relative;
   height: 400px;
   overflow: hidden;
+  background: var(--grey-400);
 }
 
 #highlights .highlight {
