@@ -54,6 +54,7 @@ body {
 }
 
 h2 {
+  font-size: 18pt;
   font-weight: normal;
   display: block;
   margin-top: 0;
@@ -431,6 +432,7 @@ section > :not(:last-child) {
 .seminar-speaker { font-weight: bold; }
 
 /* Emphasize Upcoming Seminars */
+#upcoming-seminars { font-size: 12pt; }
 /* add SVG's before date, speaker, and title */
 #upcoming-seminars .seminar {
   flex-direction: column;
@@ -486,15 +488,20 @@ footer {
   #top-nav-links.hidden {
     padding-left: 0;
     display: flex;
-    gap: 1.75em;
-    align-items: center;
+    flex-wrap: wrap;
   }
-  /* unset top-nav-links mobile-only styles */
   #top-nav-links li {
-    margin-bottom: 0;
+    /* unset top-nav-links mobile-only styles */
+    margin: 0;
     padding: 0;
+    /* set new desktop styles */
+    list-style-position: inside;
+    padding-left: 1em;
   }
-  #top-nav-links li:first-child { list-style-type: none; }
+  #top-nav-links li:first-child {
+    list-style-type: none;
+    padding-left: 0;
+  }
   #top-nav-links a { font-size: 1em; }
 
   /* Update Page Layout */
