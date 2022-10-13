@@ -3,61 +3,27 @@
 
   <head>
     <title>Goldschen-Ohm Lab</title>
+    <meta name="description" content="UT Austin Department of Neuroscience lab, specializing in Ion Channels, Single-Molecule Spectroscopy, and Dynamics.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="./images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
+    <script src="./main.js" defer></script>
   </head>
 
   <body>
 
     <!-- Background Pattern -->
     <div id="bg"></div>
-    <script>
-      // add random squares to background element
-      var bg = document.getElementById("bg");
-      var rand_span;
-      var rand_x;
-      var rand_y;
-      var rand_size;
-      var rand_rotation;
-      for (i=0; i<30; i++) {
-        rand_span = document.createElement("span");
-        // generate random attributes
-        rand_x = Math.floor(Math.random() * 100);         // 0 to 100 vw
-        rand_y = Math.floor(Math.random() * 100);         // 0 to 100 vh
-        rand_size = Math.floor(Math.random() * 15) + 10;  // 10 to 25 vmin
-        rand_rotation = Math.floor(Math.random() * 360);  // 0 to 360 deg
-        // set CSS styles
-        rand_span.style.left = rand_x + "vw";
-        rand_span.style.top = rand_y + "vh";
-        rand_span.style.width = rand_size + "vmin";
-        rand_span.style.height = rand_size + "vmin";
-        rand_span.style.transform = "rotate(" + rand_rotation + "deg)";
-        // place in bg
-        bg.insertAdjacentElement("beforeend", rand_span);
-      }
-    </script>
 
     <!-- Go to Top Button -->
     <div id="page-top"></div>
     <a id="gototop" href="#page-top">go to top</a>
-    <script>
-      // toggle gototop visibility based on page scroll position
-      var gototop = document.getElementById("gototop");
-      window.onscroll = function() {
-        if (
-          (document.body.scrollTop > 250) ||
-          (document.documentElement.scrollTop > 250)
-        ) { gototop.style.display = "block"; }
-        else { gototop.style.display = "none"; }
-      };
-    </script>
 
     <header>
       <div class="wrapper">
         <div class="left-content">
           <h1>Goldschen-Ohm Lab</h1>
-          <span style="color: gold;">Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
+          <span>Ion Channels &bull; Single-Molecule Spectroscopy &bull; Dynamics</span>
         </div>
         <div class="right-content">
           <a href="https://neuroscience.utexas.edu">
@@ -71,77 +37,118 @@
       </div>
     </header>
 
-    <nav>
+    <nav id="top-nav">
       <div class="wrapper">
-        <a href="#news">News</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#about">About</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#people">People</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#software">Software</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#resources">Resources</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#publications">Publications</a>
-        &nbsp;&bull;&nbsp;
-        <a href="#bioelectricity-seminars">Bioelectricity Seminars</a>
-      </div>
+
+        <!-- menu button -->
+        <button id="top-nav-menu-btn" aria-label="Toggle Main Navigation Menu">
+          <svg id="menu-btn-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          <svg id="menu-btn-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+          <span>Menu</span>
+        </button>
+
+        <hr />  <!-- decorative line (mobile only) -->
+
+        <!-- links -->
+        <ul id="top-nav-links">
+          <li>
+            <a href="#news">News</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#people">People</a>
+          </li>
+          <li>
+            <a href="#software">Software</a>
+          </li>
+          <li>
+            <a href="#resources">Resources</a>
+          </li>
+          <li>
+            <a href="#publications">Publications</a>
+          </li>
+          <li>
+            <a href="#bioelectricity-seminars">Bioelectricity Seminars</a>
+          </li>
+        </ul>
+
+      </div>  <!-- ./wrapper -->
     </nav>
 
     <div id="page-content">
-      <div class="wrapper" id="highlights">
-        <a href="https://doi.org/10.1085/jgp.202213177">
-          <div class="highlight">
-            <img class="highlight-image" src="images/ligand-depletion.png">
-            <img class="highlight-logo" src="images/JGP.png" width="150px">
+      <div class="wrapper" id="page-wrapper">
+
+        <!-- Highlights -->
+        <section id="highlights">
+
+          <a class="highlight" href="https://doi.org/10.1085/jgp.202213177">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/ligand-depletion.png" alt="Ligand Depletion">
+            </div>
+            <img class="highlight-logo" src="images/JGP.png" alt="Journal of General Physiology" width="150px">
             <div class="highlight-caption">
               The surprising difficulty of "simple" equilibrium binding measurements
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1101/2021.11.12.468397">
-          <div class="highlight">
-            <img class="highlight-image" src="images/smBEVO-trace.png">
-            <img class="highlight-logo" src="images/bioRxiv.jpg" width="150px">
+          </a>
+
+          <a class="highlight" href="https://doi.org/10.1101/2021.11.12.468397">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/smBEVO-trace.png" alt="smBEVO Trace">
+            </div>
+            <img class="highlight-logo" src="images/bioRxiv.jpg" alt="bioRxiv" width="150px">
             <div class="highlight-caption">
               smBEVO: A computer vision approach to single-molecule drift correction
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1038/s41467-021-26816-5">
-          <div class="highlight">
-            <img class="highlight-image" src="images/TAX4-nanovesicle.png">
-            <img class="highlight-logo" src="images/ncomm-logo.jpg" width="140px">
+          </a>
+
+          <a class="highlight" href="https://doi.org/10.1038/s41467-021-26816-5">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/TAX4-nanovesicle.png" alt="TAX4 Nanovesicle">
+            </div>
+            <img class="highlight-logo" src="images/ncomm-logo.jpg" alt="Nature Communications" width="140px">
             <div class="highlight-caption">
               Single-molecule ligand binding to CNG channels in nanovesicles
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.1016/j.bpj.2021.08.045">
-          <div class="highlight">
-            <img class="highlight-image" src="images/svmBoundary.gif">
-            <img class="highlight-logo" src="images/CellPress.jpg" width="80px">
+          </a>
+
+          <a class="highlight" href="https://doi.org/10.1016/j.bpj.2021.08.045">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/svmBoundary.gif" alt="svm Boundary">
+            </div>
+            <img class="highlight-logo" src="images/CellPress.jpg" alt="CellPress" width="80px">
             <div class="highlight-caption">
               AutoDISC: Automated single-molecule idealization
             </div>
-          </div>
-        </a>
-        <a href="https://doi.org/10.7554/eLife.64400">
-          <div class="highlight">
-            <img class="highlight-image" src="images/M23_linker.png">
-            <img class="highlight-logo" src="images/elife-logo-xs.svg" width="120px">
+          </a>
+
+          <a class="highlight" href="https://doi.org/10.7554/eLife.64400">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/M23_linker.png" alt="M23 Linker">
+            </div>
+            <img class="highlight-logo" src="images/elife-logo-xs.svg" alt="eLife" width="120px">
             <div class="highlight-caption">
               Benzodiazepine drug mechanisms
             </div>
-          </div>
-        </a>
-      </div>
-      <div class="wrapper">
+          </a>
+
+          <!-- controls -->
+          <div id="highlights-counter"></div>
+          <button id="highlights-ctrl-left" class="control left" aria-label="previous highlight">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+          </button>
+          <button id="highlights-ctrl-right" class="control right" aria-label="next highlight">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+          </button>
+
+        </section>  <!-- #/highlights -->
+
+        <!-- Main Content -->
         <main>
           <section id="news">
             <h2>News</h2>
-            2022
+            <h3>2022</h3>
             <ul>
               <li>
                 Marcel Goldschen-Ohm joined the editorial board at Frontiers in Pharmacology.
@@ -172,7 +179,7 @@
               </li>
             </ul>
 
-            2021
+            <h3>2021</h3>
             <ul>
               <li>
                 Khue Tran and Argha Bandyopadhyay develop <a href="https://github.com/marcel-goldschen-ohm/smBEVO">smBEVO</a> which leverages computer vision algorithms for best in class baseline drift correction in single-molecule time series. <a href="https://doi.org/10.1101/2021.11.12.468397">Read about it on bioRxiv</a>
@@ -194,7 +201,7 @@
               </li>
             </ul>
 
-            2020
+            <h3>2020</h3>
             <ul>
               <li>
                 Marcel Goldschen-Ohm joins the board of reviewing editors at eLife.
@@ -210,13 +217,13 @@
               </li>
             </ul>
 
-            2019
+            <h3>2019</h3>
             <ul>
               <li>
                 Rocio Finol-Urdaneta and coworkers show that batrachotoxin props open the pore of prokaryotic voltage-gated sodium channels. <a href="http://dx.doi.org/10.1085/jgp.201812278">Read about it in the Journal of General Physiology</a>
               </li>
             </ul>
-          </section>
+          </section>  <!-- ./#news -->
           <section id="about">
             <h2>About</h2>
             <!-- <img src="images/icons8-under-construction-80.png" width="82px" /> -->
@@ -312,8 +319,8 @@
                 Pranathi Pilla
               </div>
             </div>
-            <hr/>
-            Past Lab Members
+            <br /><hr/>
+            <h3>Past Lab Members</h3>
             <div class="profile">
               <img src="images/wagner_joseph_nors.jpg" alt="Joseph Wagner">
               <div class="details">
@@ -405,7 +412,7 @@
           <section id="publications">
             <h2>Publications</h2>
 
-            2022
+            <h3>2022</h3>
             <ul>
               <li>
                 <span class="pubauthors">Thomas R. Middendorf and Marcel P. Goldschen-Ohm.</span>
@@ -414,7 +421,7 @@
               </li>
             </ul>
 
-            2021
+            <h3>2021</h3>
             <ul>
               <li>
                 <span class="pubauthors">Khue Tran, Argha Bandyopadhyay, and Marcel P. Goldschen-Ohm.</span>
@@ -443,7 +450,7 @@
               </li> -->
             </ul>
 
-            2020
+            <h3>2020</h3>
             <ul>
               <li>
                 <span class="pubauthors">David S. White, Marcel P. Goldschen-Ohm, Randall H. Goldsmith and Baron Chanda.</span>
@@ -452,7 +459,7 @@
               </li>
             </ul>
 
-            2019
+            <h3>2019</h3>
             <ul>
               <li>
                 <span class="pubauthors">Rocio K. Finol-Urdaneta, Jeffrey R. McArthur, Marcel P. Goldschen-Ohm, Rachelle Gaudet, Denis B. Tikhonov, Boris S. Zhorov and Robert J. French</span>
@@ -462,8 +469,9 @@
             </ul>
 
             <hr/>
-            Prior Publications<br/><br/>
-            2017
+            <h2>Prior Publications</h2>
+
+            <h3>2017</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm and Baron Chanda.</span>
@@ -482,7 +490,7 @@
               </li>
             </ul>
 
-            2016
+            <h3>2016</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, Vadim A. Klenchin, David S. White, John B. Cowgill, Qiang Cui, Randall H. Goldsmith, and Baron Chanda.</span>
@@ -491,7 +499,7 @@
               </li>
             </ul>
 
-            2015
+            <h3>2015</h3>
             <ul>
               <li>
                 <span class="pubauthors">Huan Bao, Marcel Goldschen-Ohm, Pia Jeggle, Baron Chanda, J. Michael Edwardson, and Edwin R. Chapman.</span>
@@ -505,7 +513,7 @@
               </li>
             </ul>
 
-            2014
+            <h3>2014</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, Alexander Haroldson, Mathew V. Jones, and Robert A. Pearce.</span>
@@ -524,7 +532,7 @@
               </li>
             </ul>
 
-            2013
+            <h3>2013</h3>
             <ul>
               <li>
                 <span class="pubauthors">Deborah L. Capes, Marcel P. Goldschen-Ohm, Manoel Arcisio-Miranda, Francisco Bezanilla, and Baron Chanda.</span>
@@ -538,7 +546,7 @@
               </li>
             </ul>
 
-            2011
+            <h3>2011</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner and Mathew V. Jones</span>
@@ -547,7 +555,7 @@
               </li>
             </ul>
 
-            2010
+            <h3>2010</h3>
             <ul>
               <li>
                 <span class="pubauthors">Marcel P. Goldschen-Ohm, David A. Wagner, Steven Petrou and Mathew V. Jones</span>
@@ -557,7 +565,7 @@
             </ul>
 
             <!--
-            2005
+            <h3>2005</h3>
             <ul>
               <li>
                 <span class="pubauthors">David A. Wagner, Marcel P. Goldschen-Ohm, Tim G. Hales and Mathew V. Jones</span>
@@ -566,7 +574,7 @@
               </li>
             </ul>
 
-            2004
+            <h3>2004</h3>
             <ul>
               <li>
                 <span class="pubauthors">Eric Bach, Susan Coppersmith, Marcel Paz Goldschen, Robert Joynt and John Watrous</span>
@@ -575,7 +583,7 @@
               </li>
             </ul>
 
-            1997
+            <h3>1997</h3>
             <ul>
               <li>
                 <span class="pubauthors">M. Braunstein, R. Comstock, P. Hoffman, M. Womack, F. Deglman, D. Pinnick, G. Aaker, M. Goldschen, A. Jacobson, J. Zilka, D. Faith, S. Moore, J. Ricotta, A Weist and C. Modi</span>
@@ -584,98 +592,257 @@
               </li>
             </ul>
             -->
-
           </section>  <!-- ./#publications -->
         </main>
-        <!-- right sidebar -->
+
+        <!-- Right Sidebar -->
         <div id="sidebar">
+
           <section id="bioelectricity-seminars">
             <h2>Bioelectricity Seminar Series</h2>
-
             <a href="https://calendar.google.com/calendar/u/0?cid=Y2RoOWF2dnQwc3Q4dms3Zjh1bzFkNmNlNnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Shared Calendar</a>
 
             <hr />
-            Upcoming Seminars
-            <hr />
+            <h3>Upcoming Seminars</h3>
 
-            <ul>
-              <li>
-                2022-10-12 1:00 PM CST<br/>
-                <span class="seminar-speaker">Ashlee Rowe</span><br/>
+            <ul class="seminar-list" id="upcoming-seminars">
+              <li class="seminar">
+                <span class="seminar-date">2022-10-12 1:00 PM CST</span>
+                <span class="seminar-speaker">Ashlee Rowe</span>
               </li>
-              <li>
-                2022-11-09 1:00 PM CST<br/>
-                <span class="seminar-speaker">Osama Harraz</span><br/>
+              <li class="seminar">
+                <span class="seminar-date">2022-11-09 1:00 PM CST</span>
+                <span class="seminar-speaker">Osama Harraz</span>
               </li>
             </ul>
 
-            <hr/>
-            Past Seminars
             <hr />
+            <h3>Past Seminars</h3>
 
-            <div id="past-seminars">
-              2022-06-22 <span class="seminar-speaker">Lejla Zubcevic</span><br/>
-              2022-06-01 <span class="seminar-speaker">Yoni Haitin</span><br/>
-              2022-04-27 <span class="seminar-speaker">Mark Hoon</span><br/>
-              2022-04-13 <span class="seminar-speaker">Jorge Contreras</span><br/>
-              2022-03-23 <span class="seminar-speaker">Aurelia Honerkamp-Smith</span><br/>
-              2022-02-09 <span class="seminar-speaker">Irina Vetter</span><br/>
-              2022-02-02 <span class="seminar-speaker">Anthony Auerbach</span><br/>
-              <span class="seminar-title">Agonists to ions: Getting  deep  into receptor activation</span>
-              2022-01-26 <span class="seminar-speaker">Christiana Schroeder</span><br/>
-              2021-12-15 <span class="seminar-speaker">László Csanády</span><br/>
-              2021-12-08 <span class="seminar-speaker">Sviatoslav Bagriantsev</span><br/>
-              2021-11-24 <span class="seminar-speaker">Guillermina Ramirez-San Juan</span><br/>
-              2021-11-17 <span class="seminar-speaker">Yi-Chih Lin</span><br/>
-              2021-11-10 <span class="seminar-speaker">Vincenzo Carnevale</span><br/>
-              2021-10-27 <span class="seminar-speaker">Vera Mooseenkova-Bell</span><br/>
-              2021-10-06 <span class="seminar-speaker">Ucheor (Brandon) Choi</span><br/>
-              2021-09-22 <span class="seminar-speaker">Weiwei Wang</span><br/>
-              2021-09-15 <span class="seminar-speaker">Zhe Lu</span><br/>
-              2021-09-08 <span class="seminar-speaker">Liguo Wang</span><br/>
-              2021-08-18 <span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
-              2021-08-11 <span class="seminar-speaker">Katherine Henzler-Wildman</span><br/>
-							2021-08-04 <span class="seminar-speaker">Doug Fowler</span><br/>
-              2021-07-14 <span class="seminar-speaker">Jon Lederer</span>,
-              <span class="seminar-title">Regulation of ATP production by mitochondria in heart.</span><br/>
-              2021-07-07 <span class="seminar-speaker">Colin Nichols</span>,
-              <span class="seminar-title">Gating and selectivity in the K channel pore: what's really going on!</span><br/>
-              2021-06-30 <span class="seminar-speaker">Lucie Delmotte</span>,
-              <span class="seminar-title">Molecular insights into the energetic basis of HCN channel activation and gating.</span><br/>
-              2021-06-09 <span class="seminar-speaker">Brendan Lehnert</span>,
-              <span class="seminar-title">Peripheral mechanoreceptors and the development of body representation in the brain.</span><br/>
-              2021-01-20 <span class="seminar-speaker">Ron Elber</span><br/>
-              2020-12-09 <span class="seminar-speaker">Bill Kobertz</span><br/>
-              2020-11-18 <span class="seminar-speaker">Lucy Forest</span><br/>
-              2020-11-11 <span class="seminar-speaker">Alex Chesler</span><br/>
-              2020-11-04 <span class="seminar-speaker">David White</span><br/>
-              2020-10-28 <span class="seminar-speaker">Vladimir Yarov-Yarovoy</span><br/>
-              2020-10-21 <span class="seminar-speaker">Jennifer Pluznikk</span><br/>
-              2020-10-14 <span class="seminar-speaker">Colleen Clancy</span><br/>
-              2020-10-07 <span class="seminar-speaker">Nick Bellono</span><br/>
-              2020-09-23 <span class="seminar-speaker">Henry Colecraft</span><br/>
-              2020-09-16 <span class="seminar-speaker">Chris Ahern</span><br/>
-              2020-09-09 <span class="seminar-speaker">Ivy Dick</span><br/>
-              2020-09-02 <span class="seminar-speaker">Carlos Baiz</span><br/>
-              2020-08-26 <span class="seminar-speaker">Tamara Rosenbaum</span><br/>
-              2020-08-19 <span class="seminar-speaker">Hiro Furakawa</span><br/>
-              2020-08-12 <span class="seminar-speaker">Alessio Arccadi</span><br/>
-              2020-08-05 <span class="seminar-speaker">Julia York</span><br/>
-              2020-07-29 <span class="seminar-speaker">Manu Ben Johny</span><br/>
-              2020-07-22 <span class="seminar-speaker">Valeria Vasquez</span><br/>
-              2020-07-15 <span class="seminar-speaker">Reba Howard</span><br/>
-              2020-07-08 <span class="seminar-speaker">Murali Prakriya</span><br/>
-              2020-07-01 <span class="seminar-speaker">Jorg Grandl</span><br/>
-              2020-06-24 <span class="seminar-speaker">Ryan Hibbs</span><br/>
-              2020-06-17 <span class="seminar-speaker">Josh Rosenthal</span><br/>
-              2020-06-03 <span class="seminar-speaker">Rose Dickson</span><br/>
-              2020-05-27 <span class="seminar-speaker">Medha Pathak</span><br/>
-              2020-05-20 <span class="seminar-speaker">Gary Yellen</span><br/>
-              2020-05-13 <span class="seminar-speaker">Toshi Hoshi</span><br/>
-              2020-05-06 <span class="seminar-speaker">Cathy Proenza</span><br/>
-            </div>
-
-          </section>  <!-- ./#bioelectricity-seminars -->
+            <ul class="seminar-list" id="past-seminars">
+              <li class="seminar">
+                <span class="seminar-date">2022-06-22</span>
+                <span class="seminar-speaker">Lejla Zubcevic</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-06-01</span>
+                <span class="seminar-speaker">Yoni Haitin</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-04-27</span>
+                <span class="seminar-speaker">Mark Hoon</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-04-13</span>
+                <span class="seminar-speaker">Jorge Contreras</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-03-23</span>
+                <span class="seminar-speaker">Aurelia Honerkamp-Smith</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-02-09</span>
+                <span class="seminar-speaker">Irina Vetter</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-02-02</span>
+                <span class="seminar-speaker">Anthony Auerbach</span>
+                <span class="seminar-title">Agonists to ions: Getting deep into receptor activation</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2022-01-26</span>
+                <span class="seminar-speaker">Christiana Schroeder</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-12-15</span>
+                <span class="seminar-speaker">László Csanády</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-12-08</span>
+                <span class="seminar-speaker">Sviatoslav Bagriantsev</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-11-24</span>
+                <span class="seminar-speaker">Guillermina Ramirez-San Juan</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-11-17</span>
+                <span class="seminar-speaker">Yi-Chih Lin</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-11-10</span>
+                <span class="seminar-speaker">Vincenzo Carnevale</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-10-27</span>
+                <span class="seminar-speaker">Vera Mooseenkova-Bell</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-10-06</span>
+                <span class="seminar-speaker">Ucheor (Brandon) Choi</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-09-22</span>
+                <span class="seminar-speaker">Weiwei Wang</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-09-15</span>
+                <span class="seminar-speaker">Zhe Lu</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-09-08</span>
+                <span class="seminar-speaker">Liguo Wang</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-08-18</span>
+                <span class="seminar-speaker">Katherine Henzler-Wildman</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-08-11</span>
+                <span class="seminar-speaker">Katherine Henzler-Wildman</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-08-04</span>
+                <span class="seminar-speaker">Doug Fowler</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-07-14</span>
+                <span class="seminar-speaker">Jon Lederer</span>
+                <span class="seminar-title">Regulation of ATP production by mitochondria in heart.</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-07-07</span>
+                <span class="seminar-speaker">Colin Nichols</span>
+                <span class="seminar-title">Gating and selectivity in the K channel pore: what's really going on!</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-06-30</span>
+                <span class="seminar-speaker">Lucie Delmotte</span>
+                <span class="seminar-title">Molecular insights into the energetic basis of HCN channel activation and gating.</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-06-09</span>
+                <span class="seminar-speaker">Brendan Lehnert</span>
+                <span class="seminar-title">Peripheral mechanoreceptors and the development of body representation in the brain.</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2021-01-20</span>
+                <span class="seminar-speaker">Ron Elber</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-12-09</span>
+                <span class="seminar-speaker">Bill Kobertz</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-11-18</span>
+                <span class="seminar-speaker">Lucy Forest</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-11-11</span>
+                <span class="seminar-speaker">Alex Chesler</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-11-04</span>
+                <span class="seminar-speaker">David White</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-10-28</span>
+                <span class="seminar-speaker">Vladimir Yarov-Yarovoy</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-10-21</span>
+                <span class="seminar-speaker">Jennifer Pluznikk</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-10-14</span>
+                <span class="seminar-speaker">Colleen Clancy</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-10-07</span>
+                <span class="seminar-speaker">Nick Bellono</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-09-23</span>
+                <span class="seminar-speaker">Henry Colecraft</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-09-16</span>
+                <span class="seminar-speaker">Chris Ahern</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-09-09</span>
+                <span class="seminar-speaker">Ivy Dick</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-09-02</span>
+                <span class="seminar-speaker">Carlos Baiz</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-08-26</span>
+                <span class="seminar-speaker">Tamara Rosenbaum</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-08-19</span>
+                <span class="seminar-speaker">Hiro Furakawa</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-08-12</span>
+                <span class="seminar-speaker">Alessio Arccadi</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-08-05</span>
+                <span class="seminar-speaker">Julia York</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-07-29</span>
+                <span class="seminar-speaker">Manu Ben Johny</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-07-22</span>
+                <span class="seminar-speaker">Valeria Vasquez</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-07-15</span>
+                <span class="seminar-speaker">Reba Howard</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-07-08</span>
+                <span class="seminar-speaker">Murali Prakriya</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-07-01</span>
+                <span class="seminar-speaker">Jorg Grandl</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-06-24</span>
+                <span class="seminar-speaker">Ryan Hibbs</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-06-17</span>
+                <span class="seminar-speaker">Josh Rosenthal</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-06-03</span>
+                <span class="seminar-speaker">Rose Dickson</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-05-27</span>
+                <span class="seminar-speaker">Medha Pathak</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-05-20</span>
+                <span class="seminar-speaker">Gary Yellen</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-05-13</span>
+                <span class="seminar-speaker">Toshi Hoshi</span>
+              </li>
+              <li class="seminar">
+                <span class="seminar-date">2020-05-06</span>
+                <span class="seminar-speaker">Cathy Proenza</span>
+              </li>
+            </ul>
+          </section>  <!-- #/past-seminars -->
         </div>  <!-- ./#sidebar -->
 
       </div>  <!-- ./.wrapper -->
