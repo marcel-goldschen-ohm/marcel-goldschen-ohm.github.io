@@ -370,23 +370,23 @@ section > :not(:last-child) {
 
 
 /* Page Sections ----------------------------------------------------------- */
-#about div {
+#research div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-#about div img {
+#research div img {
   margin: 10px;
   /* width is 100% minus left/right margin space */
   width: calc(100% - 20px);
   height: auto;
 }
 @media (min-width: 650px) {
-  #about div {
+  #research div {
     flex-direction: row;
     align-items: flex-start;
   }
-  #about div img {
+  #research div img {
     max-width: calc(50% - 20px);
   }
 }
