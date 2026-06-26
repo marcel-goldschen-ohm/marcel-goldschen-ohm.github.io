@@ -169,7 +169,8 @@ nav#top-nav {
   color: var(--white);
   padding: var(--layout-spacing) calc(var(--layout-spacing) * 2);
   /* box shadow bugfix - render shadow above next section */
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1;
 }
 
