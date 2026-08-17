@@ -372,6 +372,22 @@ section > :not(:last-child) {
 
 
 /* Page Sections ----------------------------------------------------------- */
+#intro img {
+  width: 100%;
+}
+#intro #highlighted_papers {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: top;
+  text-align: center;
+}
+#intro #highlighted_papers .highlighted_paper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 #research div {
   display: flex;
   flex-direction: column;
@@ -390,6 +406,10 @@ section > :not(:last-child) {
   }
   #research div img {
     max-width: calc(50% - 20px);
+  }
+  /* four columns of highlighted papers */
+  #intro #highlighted_papers {
+    display: grid;
   }
 }
 

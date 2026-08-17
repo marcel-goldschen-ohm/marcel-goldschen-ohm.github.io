@@ -83,7 +83,17 @@
         <!-- Highlights -->
         <section id="highlights">
 
-          <a class="highlight" href="https://doi.org/10.64898/2026.02.02.703268">
+          <a class="highlight" href="https://doi.org/10.64898/2026.05.22.727206">
+            <div class="highlight-image-cover">
+              <img class="highlight-image" src="images/highlights/ancient-Hbond.png" alt="An atomic interaction conserved for over 600 million years gates inhibitory neurotransmission">
+            </div>
+            <img class="highlight-logo" src="images/logos/bioRxiv.jpg" alt="bioRxiv">
+            <div class="highlight-caption">
+              A 4-billion year old atomic interaction gates inhibitory neurotransmission
+            </div>
+          </a>
+
+          <!-- <a class="highlight" href="https://doi.org/10.64898/2026.02.02.703268">
             <div class="highlight-image-cover">
               <img class="highlight-image" src="images/highlights/MD-asymm-pore-closure.png" alt="Open-state dynamics and allosteric modulation of the &alpha;1&beta;3&gamma;2 GABAA receptor stabilized by L9'T/S substitutions">
             </div>
@@ -91,7 +101,7 @@
             <div class="highlight-caption">
               Molecular dynamics simulation of asymmetric pore closure.
             </div>
-          </a>
+          </a> -->
 
           <a class="highlight" href="https://doi.org/10.1038/s41467-025-61447-0">
             <div class="highlight-image-cover">
@@ -103,7 +113,7 @@
             </div>
           </a>
 
-          <a class="highlight" href="https://doi.org/10.1016/j.bpj.2024.06.018">
+          <!-- <a class="highlight" href="https://doi.org/10.1016/j.bpj.2024.06.018">
             <div class="highlight-image-cover">
               <img class="highlight-image" src="images/people/Richard_Aldrich.png" alt="Bioelectricity and Molecular Signaling in honor of Richard Aldrich">
             </div>
@@ -111,7 +121,7 @@
             <div class="highlight-caption">
               Special issue of Biophysical Journal in honor of Richard Aldrich
             </div>
-          </a>
+          </a> -->
 
           <a class="highlight" href="https://doi.org/10.1016/j.bpj.2024.02.016">
             <div class="highlight-image-cover">
@@ -123,7 +133,7 @@
             </div>
           </a>
 
-          <a class="highlight" href="https://doi.org/10.1016/j.bpj.2024.01.035">
+          <!-- <a class="highlight" href="https://doi.org/10.1016/j.bpj.2024.01.035">
             <div class="highlight-image-cover">
               <img class="highlight-image" src="images/highlights/state-dep-potentiator.png" alt="State-dependent potentiator">
             </div>
@@ -131,7 +141,7 @@
             <div class="highlight-caption">
               State-dependent energetics of allosteric potentiators
             </div>
-          </a>
+          </a> -->
 
           <a class="highlight" href="https://doi.org/10.7554/eLife.85317">
             <div class="highlight-image-cover">
@@ -217,7 +227,30 @@
         <!-- Main Content -->
         <main>
           <section id="intro">
-            <img src="images/2025-09-24_GOLab.jpg" alt="Goldschen-Ohm Lab Photo 2025" width="100%">
+            <img src="images/2025-09-24_GOLab.jpg" alt="Goldschen-Ohm Lab Photo 2025">
+
+            <div id="highlighted_papers">
+              <a class="highlighted_paper" href="https://doi.org/10.64898/2026.05.22.727206">
+                <img class="highlighted_paper_logo" src="images/logos/bioRxiv-2.jpg">
+                A 4-billion year old atomic interaction gates inhibitory neurotransmission
+                <img src="images/highlights/ancient-Hbond.png">
+              </a>
+              <a class="highlighted_paper" href="https://doi.org/10.1038/s41467-025-61447-0">
+                <img class="highlighted_paper_logo" src="images/logos/ncomm-logo.jpg">
+                A single H-bond keeps GABA-A receptors closed
+                <img src="images/highlights/M23_Hbond_sm.png">
+              </a>
+              <a class="highlighted_paper" href="https://doi.org/10.1016/j.bpj.2024.02.016">
+                <img class="highlighted_paper_logo" src="images/logos/CellPress-2.jpg">
+                <i>Biophysical Journal Paper of the Year</i>
+                <img src="images/highlights/M2-M3-linkers.png">
+              </a>
+              <a class="highlighted_paper" href="https://doi.org/10.1038/s41467-021-26816-5">
+                <img class="highlighted_paper_logo" src="images/logos/ncomm-logo.jpg">
+                Single-molecule binding dynamics in cell-derived nanovesicles
+                <img src="images/highlights/TAX4-nanovesicle.png">
+              </a>
+            </div>
           </section>  <!-- ./#intro -->
 
           <section id="news">
@@ -517,7 +550,11 @@
             <ul>
               <li>
                 <a href="https://github.com/marcel-goldschen-ohm/xarray-graph">xarray-graph</a>:
-                PyQt UIs for Xarray DataTree including tree view and DataArray slice graphing and processing. This aims to be a complete signal processing and visualization tool for 1-D slices of N-dimensional array data as is common in many scientific domains such as electrophysiology (i.e., time series recordings).
+                GUIs for <a href="https://docs.xarray.dev/en/stable/">Xarray</a> DataTree including tree view and DataArray slice graphing and processing. This aims to be a complete signal processing and visualization tool for 1-D slices of N-dimensional array data as is common in many scientific domains such as electrophysiology (i.e., time series recordings).
+              </li>
+              <li>
+                <a href="https://github.com/marcel-goldschen-ohm/ChimeraX-SecondaryStructure">ChimeraX-SecondaryStructure</a>:
+                ChimeraX plugin for visualizing protein secondary structures. Allows use of a modern version of DSSP for visualizing secondary structures beyond only alpha helices, beta sheets, and coils, which are already straightforward in ChimeraX. Highlights additional secondary structures including pi helices, 3-10 helices, poly-proline helices, beta bridges, and hydrogen-bonded turns.
               </li>
               <li>
                 <a href="https://github.com/marcel-goldschen-ohm/napari-cosmos-ts">napari-cosmos-ts</a>:
@@ -525,7 +562,7 @@
               </li>
               <li>
                 <a href="https://github.com/marcel-goldschen-ohm/pyDISC">pyDISC</a>:
-                GUI for idealizing one-dimensional time series using the DIvisive Segmentation and Clustering (DISC) algorithm plus tools for adjusting number of levels or generic HMM optimizaiton. An excellent tool for idealizing time series, tested primarily on fluorescence data. In many cases automated idealization is very good, but otherwise manual refinement by adding/removing levels and/or HMM optimization does the trick.
+                GUI for idealizing one-dimensional time series using the DIvisive Segmentation and Clustering (DISC) algorithm plus tools for adjusting number of levels or generic HMM optimizaiton. Tested primarily on fluorescence data. In many cases automated idealization is very good, but otherwise manual refinement by adding/removing levels and/or HMM optimization does the trick.
               </li>
               <li>
                 <a href="https://github.com/marcel-goldschen-ohm/AutoDISC">AutoDISC</a>:
